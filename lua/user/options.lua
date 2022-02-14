@@ -46,4 +46,4 @@ vim.g.vscode_italic_comment = 1
 -- vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]]
-vim.cmd [[colorscheme vscode]]
+vim.cmd [[colorscheme nord]]

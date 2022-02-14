@@ -5,9 +5,7 @@ end
 
 lualine.setup({
   options = {
-    theme = "vscode",
-    component_separators = {'', ''},
-    section_separators = {'', ''},
+    theme = "auto",
   },
   sections = {
     lualine_a = {{'filename', path = 2}},

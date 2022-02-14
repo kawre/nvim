@@ -56,7 +56,11 @@ return packer.startup(function(use)
   use 'windwp/nvim-ts-autotag'
 	use 'nvim-telescope/telescope-dap.nvim'
 	use 'theHamsta/nvim-dap-virtual-text'
-  use 'nvim-lualine/lualine.nvim'
+  use {
+  'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 	use 'kyazdani42/nvim-web-devicons'
 	use 'ryanoasis/vim-devicons'
   use 'kyazdani42/nvim-tree.lua'
@@ -64,6 +68,7 @@ return packer.startup(function(use)
   use 'p00f/nvim-ts-rainbow'
 	use 'williamboman/nvim-lsp-installer'
   use 'tpope/vim-surround'
+  use 'arcticicestudio/nord-vim'
 
   -- cmp
   use 'hrsh7th/cmp-nvim-lsp'

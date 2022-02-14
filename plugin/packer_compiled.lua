@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/home/kawre/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/kawre/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -123,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kawre/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
     url = "https://github.com/tamago324/nlsp-settings.nvim"
+  },
+  ["nord-vim"] = {
+    loaded = true,
+    path = "/home/kawre/.local/share/nvim/site/pack/packer/start/nord-vim",
+    url = "https://github.com/arcticicestudio/nord-vim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
