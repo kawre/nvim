@@ -1,3 +1,5 @@
+local cmd = vim.cmd
+
 local options = {
 	backup = false, -- creates a backup file
 	clipboard = "unnamedplus", -- allows neovim to access the system clipboard
@@ -40,14 +42,15 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
+-- cmd("set whichwrap+=<,>,[,],h,l")
+cmd([[set iskeyword+=-]])
+
+cmd([[autocmd BufWinEnter * setlocal formatoptions-=cro]])
+cmd([[autocmd BufRead * setlocal formatoptions-=cro]])
+cmd([[autocmd BufNewFile * setlocal formatoptions-=cro]])
+
+-- Theme
 vim.g.vscode_style = "dark"
-vim.g.vscode_italic_comment = 1
-
--- vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd([[set iskeyword+=-]])
-vim.cmd([[colorscheme nord]])
-
-vim.cmd([[autocmd BufWinEnter * setlocal formatoptions-=cro]])
-vim.cmd([[autocmd BufRead * setlocal formatoptions-=cro]])
-vim.cmd([[autocmd BufNewFile * setlocal formatoptions-=cro]])
---vim.cmd [[set formatoptions-=cro]]
+cmd([[colorscheme vscode]])
+-- cmd([[autocmd BufEnter *.tsx colorscheme vscode]])
+-- cmd([[autocmd BufEnter *.ts colorscheme vscode]])
