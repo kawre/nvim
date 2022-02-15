@@ -69,6 +69,7 @@ return packer.startup(function(use)
 	use 'williamboman/nvim-lsp-installer'
   use 'tpope/vim-surround'
   use 'arcticicestudio/nord-vim'
+  use 'norcalli/nvim-colorizer.lua'
 
   -- cmp
   use 'hrsh7th/cmp-nvim-lsp'

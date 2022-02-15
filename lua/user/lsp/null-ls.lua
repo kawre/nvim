@@ -4,12 +4,14 @@ if not null_ls_status_ok then
 end
 
 local formatting = null_ls.builtins.formatting
-local diagnostics = null_ls.builtins.diagnostics
+-- local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
   debug=false,
   sources={
     formatting.prettier,
+    formatting.stylua,
+    formatting.black,
   },
   on_attach = function(client)
     if client.resolved_capabilities.document_formatting then

@@ -20,5 +20,6 @@ keymap('n', '<leader>w', ':w<CR>', opts)
 -- Insert
 keymap("i", "jk", "<Esc>", opts)
 
-
-
+-- Buffer
+keymap('n', '<leader>p', ':BufferLineCycleNext<CR>', opts)
+keymap('n', '<leader>n', ':BufferLineCyclePrev<CR>', opts)
