@@ -1,12 +1,13 @@
-require "user.options"
-require "user.plugins"
-require "user.colorscheme"
-require "user.alpha"
-require "user.treesitter"
-require "user.nvim-tree"
-require "user.keymaps"
-require "user.autopairs"
-require "user.telescope"
-require "user.cmp"
-require "user.lsp"
-require "user.lualine"
+require("user.options")
+require("user.plugins")
+require("user.colorscheme")
+require("user.alpha")
+require("user.nvim-tree")
+require("user.keymaps")
+require("user.autopairs")
+require("user.telescope")
+require("user.cmp")
+require("user.lsp")
+require("user.lualine")
+require("user.surround")
+require("user.treesitter")

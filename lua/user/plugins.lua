@@ -46,8 +46,14 @@ return packer.startup(function(use)
 	-- My plugins here
 	use("wbthomason/packer.nvim")
 	use("goolord/alpha-nvim")
-	use("nvim-treesitter/nvim-treesitter")
 	use("windwp/nvim-autopairs")
+	use("nvim-lua/plenary.nvim")
+	use("nvim-telescope/telescope.nvim")
+
+	-- Treesitter
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use("p00f/nvim-ts-rainbow")
+	use("kylechui/nvim-surround")
 	use({
 		"abecodes/tabout.nvim",
 		config = function()
@@ -56,8 +62,6 @@ return packer.startup(function(use)
 		wants = { "nvim-treesitter" },
 		after = { "nvim-cmp" },
 	})
-	use("nvim-lua/plenary.nvim")
-	use("nvim-telescope/telescope.nvim")
 
 	-- cmp
 	use("hrsh7th/nvim-cmp")
@@ -87,6 +91,7 @@ return packer.startup(function(use)
 	use("Mofiqul/vscode.nvim")
 	use("shaunsingh/nord.nvim")
 	use("tomasiser/vim-code-dark")
+	use("lunarvim/darkplus.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
