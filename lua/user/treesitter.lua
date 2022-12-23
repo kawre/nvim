@@ -23,6 +23,6 @@ configs.setup({
 		-- termcolors = {} -- table of colour name strings
 	},
 	indent = {
-		enable = true,
+		enable = false,
 	},
 })

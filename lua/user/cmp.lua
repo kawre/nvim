@@ -1,10 +1,7 @@
 local cmp_status, cmp = pcall(require, "cmp")
-if not cmp_status then
-	return
-end
-
 local snip_status, luasnip = pcall(require, "luasnip")
-if not snip_status then
+
+if not cmp_status or not snip_status then
 	return
 end
 
@@ -59,6 +56,7 @@ cmp.setup({
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
+			vim_item.abbr = string.sub(vim_item.abbr, 1, 40)
 			vim_item.kind = kind_icons[vim_item.kind]
 			vim_item.menu = ({
 				nvim_lsp = "",
@@ -82,20 +80,13 @@ cmp.setup({
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
+	view = {
+		name = "custom",
+		selection_order = "near_cursor",
+	},
 	window = {
-		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
-	},
-	experimental = {
-		ghost_text = true,
-	},
-})
-
--- `/` cmdline setup.
-cmp.setup.cmdline("/", {
-	mapping = cmp.mapping.preset.cmdline(),
-	sources = {
-		{ name = "buffer" },
+		completion = cmp.config.window.bordered(),
 	},
 })
 
@@ -112,4 +103,11 @@ cmp.setup.cmdline(":", {
 			},
 		},
 	}),
+})
+
+cmp.setup.cmdline({ "/", "?" }, {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = {
+		{ name = "buffer" },
+	},
 })

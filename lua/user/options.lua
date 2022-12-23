@@ -40,10 +40,13 @@ vim.opt.whichwrap:append("<,>,[,],h,l") -- keys allowed to move to the previous/
 vim.opt.iskeyword:append("-") -- treats words with `-` as single words
 vim.opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequence of letters which describes how automatic formatting is to be done
 vim.opt.linebreak = true
-vim.wo.fillchars = "eob: "
 
-vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
-vim.cmd([[autocmd BufWritePost * TSDisable rainbow | TSEnable rainbow]])
-vim.cmd(
-	[[autocmd BufNewFile,BufReadPost * TSDisable rainbow | TSEnable rainbow | TSDisable rainbow | TSEnable rainbow | TSDisable rainbow | TSEnable rainbow]]
-)
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+
+vim.cmd([[
+  augroup format_on_save
+    autocmd!
+    autocmd BufWritePre * lua vim.lsp.buf.format({ async = true })
+    autocmd BufWritePost * TSDisable rainbow | TSEnable rainbow
+  augroup end
+]])

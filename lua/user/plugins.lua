@@ -48,12 +48,18 @@ return packer.startup(function(use)
 	use("goolord/alpha-nvim")
 	use("windwp/nvim-autopairs")
 	use("nvim-lua/plenary.nvim")
-	use("nvim-telescope/telescope.nvim")
+	use("lukas-reineke/indent-blankline.nvim")
+	use("norcalli/nvim-colorizer.lua")
+	use("lewis6991/gitsigns.nvim")
+	use("lewis6991/impatient.nvim")
+	use("terrortylor/nvim-comment")
+	use("RRethy/vim-illuminate")
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("p00f/nvim-ts-rainbow")
 	use("kylechui/nvim-surround")
+	use("kiyoon/treesitter-indent-object.nvim")
 	use({
 		"abecodes/tabout.nvim",
 		config = function()
@@ -62,6 +68,10 @@ return packer.startup(function(use)
 		wants = { "nvim-treesitter" },
 		after = { "nvim-cmp" },
 	})
+
+	-- Telescope
+	use("nvim-telescope/telescope-project.nvim")
+	use("nvim-telescope/telescope.nvim")
 
 	-- cmp
 	use("hrsh7th/nvim-cmp")
@@ -82,6 +92,7 @@ return packer.startup(function(use)
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
+	use("ray-x/lsp_signature.nvim")
 
 	-- Nvim Tree
 	use("nvim-tree/nvim-tree.lua")
@@ -90,8 +101,6 @@ return packer.startup(function(use)
 	-- Themes
 	use("Mofiqul/vscode.nvim")
 	use("shaunsingh/nord.nvim")
-	use("tomasiser/vim-code-dark")
-	use("lunarvim/darkplus.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
