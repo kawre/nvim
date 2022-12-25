@@ -28,7 +28,6 @@ local status_ok, packer = pcall(require, "packer")
 if not status_ok then
 	return
 end
-
 -- Have packer use a popup window
 packer.init({
 	display = {
@@ -53,7 +52,7 @@ return packer.startup(function(use)
 	use("lewis6991/gitsigns.nvim")
 	use("lewis6991/impatient.nvim")
 	use("terrortylor/nvim-comment")
-	use("RRethy/vim-illuminate")
+	--use("RRethy/vim-illuminate")
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
@@ -99,8 +98,11 @@ return packer.startup(function(use)
 	use("nvim-tree/nvim-web-devicons")
 
 	-- Themes
+	use("dracula/vim")
 	use("Mofiqul/vscode.nvim")
 	use("shaunsingh/nord.nvim")
+	use("preservim/vim-colors-pencil")
+	use("mhinz/vim-janah")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

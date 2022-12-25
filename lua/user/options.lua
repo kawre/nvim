@@ -10,8 +10,8 @@ vim.opt.mouse = "a" -- allow the mouse to be used in neovim
 vim.opt.pumheight = 10 -- pop up menu height
 vim.opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
 vim.opt.showtabline = 0 -- always show tabs
-vim.opt.smartcase = true -- smart case
-vim.opt.smartindent = true -- make indenting smarter again
+vim.opt.smartcase = false -- smart case
+vim.opt.smartindent = false -- make indenting smarter again
 vim.opt.splitbelow = true -- force all horizontal splits to go below current window
 vim.opt.splitright = true -- force all vertical splits to go to the right of current window
 vim.opt.swapfile = false -- creates a swapfile
@@ -46,7 +46,7 @@ vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd([[
   augroup format_on_save
     autocmd!
-    autocmd BufWritePre * lua vim.lsp.buf.format({ async = true })
+    autocmd BufWritePre * lua vim.lsp.buf.format()
     autocmd BufWritePost * TSDisable rainbow | TSEnable rainbow
   augroup end
 ]])

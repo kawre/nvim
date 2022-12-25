@@ -50,8 +50,7 @@ cmp.setup({
 			c = cmp.mapping.close(),
 		}),
 		-- Accept currently selected item. If none selected, `select` first item.
-		-- Set `select` to `false` to only confirm explicitly selected items.
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
+		-- Set `select` to `false` to only confirm explicitly selected items. ["<CR>"] = cmp.mapping.confirm({ select = true }),
 	}),
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
@@ -85,8 +84,8 @@ cmp.setup({
 		selection_order = "near_cursor",
 	},
 	window = {
-		documentation = cmp.config.window.bordered(),
-		completion = cmp.config.window.bordered(),
+		-- documentation = cmp.config.window.bordered(),
+		-- completion = cmp.config.window.bordered(),
 	},
 })
 

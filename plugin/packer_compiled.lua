@@ -248,10 +248,20 @@ _G.packer_plugins = {
     path = "/home/kawre/.local/share/nvim/site/pack/packer/start/treesitter-indent-object.nvim",
     url = "https://github.com/kiyoon/treesitter-indent-object.nvim"
   },
-  ["vim-illuminate"] = {
+  vim = {
     loaded = true,
-    path = "/home/kawre/.local/share/nvim/site/pack/packer/start/vim-illuminate",
-    url = "https://github.com/RRethy/vim-illuminate"
+    path = "/home/kawre/.local/share/nvim/site/pack/packer/start/vim",
+    url = "https://github.com/dracula/vim"
+  },
+  ["vim-colors-pencil"] = {
+    loaded = true,
+    path = "/home/kawre/.local/share/nvim/site/pack/packer/start/vim-colors-pencil",
+    url = "https://github.com/preservim/vim-colors-pencil"
+  },
+  ["vim-janah"] = {
+    loaded = true,
+    path = "/home/kawre/.local/share/nvim/site/pack/packer/start/vim-janah",
+    url = "https://github.com/mhinz/vim-janah"
   },
   ["vscode.nvim"] = {
     loaded = true,
