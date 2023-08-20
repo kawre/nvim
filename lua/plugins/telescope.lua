@@ -9,19 +9,17 @@ local M = {
 }
 
 M.keys = {
-	{ "<leader>ff", ":Telescope find_files<CR>", desc = "Find File" },
-	{ "<leader>ft", ":Telescope live_grep<CR>", desc = "Find Text" },
-	{ "<leader>fb", ":Telescope buffers<CR>", desc = "Find Buffer" },
-	{ "<leader>fk", ":Telescope keymaps<CR>", desc = "Find Keymap" },
-	{ "<leader>fp", ":Telescope project<CR>", desc = "Find Project" },
+	{ "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find File" },
+	{ "<leader>ft", "<cmd>Telescope live_grep<CR>", desc = "Find Text" },
+	{ "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Find Buffer" },
+	{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find Keymap" },
+	{ "<leader>fp", "<cmd>Telescope project<CR>", desc = "Find Project" },
 }
 
 M.config = function()
 	local telescope = require("telescope")
 	require("telescope").load_extension("project")
-
 	local actions = require("telescope.actions")
-	local project_actions = require("telescope._extensions.project.actions")
 
 	telescope.setup({
 		defaults = {

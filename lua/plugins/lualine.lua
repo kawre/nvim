@@ -11,6 +11,7 @@ M.opts = {
 		disabled_filetypes = {
 			"lazy",
 			"NvimTree",
+			"neo-tree",
 		},
 		ignore_focus = {},
 		always_divide_middle = true,

@@ -4,6 +4,7 @@ local M = {
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
+	enabled = false,
 }
 
 M.init = function()
@@ -12,7 +13,7 @@ M.init = function()
 end
 
 M.keys = {
-	{ "<leader>e", ":NvimTreeToggle<CR>", desc = "Nvim Tree Toggle" },
+	{ "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Nvim Tree Toggle" },
 }
 
 M.opts = {
