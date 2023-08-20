@@ -13,10 +13,50 @@ M.keys = {
 	{ "<leader>e", "<cmd>Neotree left toggle<cr>", desc = "Toggle Neotree" },
 }
 
+M.init = function()
+	vim.g.loaded_netrw = 1
+	vim.g.loaded_netrwPlugin = 1
+end
+
 M.opts = {
 	window = {
 		position = "left",
 		width = 42,
+	},
+	default_component_configs = {
+		icon = {
+			folder_closed = "",
+			folder_open = "",
+			folder_empty = "󰜌",
+			-- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
+			-- then these will never be used.
+			default = "*",
+			highlight = "NeoTreeFileIcon",
+		},
+		modified = {
+			symbol = "",
+			highlight = "NeoTreeModified",
+		},
+		git_status = {
+			symbols = {
+				-- Change type
+				added = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
+				modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
+				deleted = "✖", -- this can only be used in the git_status source
+				renamed = "󰁕", -- this can only be used in the git_status source
+				-- Status type
+				untracked = "",
+				ignored = "",
+				unstaged = "󰄱",
+				staged = "",
+				conflict = "",
+			},
+		},
+		-- indent = {
+		-- 	indent_size = 1,
+		-- 	padding = 0,
+		-- 	indent_market = "",
+		-- },
 	},
 	filesystem = {
 		filtered_items = {

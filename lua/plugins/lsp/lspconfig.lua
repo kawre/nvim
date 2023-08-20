@@ -1,24 +1,22 @@
 local M = {
 	"neovim/nvim-lspconfig",
-	config = function() end,
 }
 
 M.config = function()
 	local lspconfig = require("lspconfig")
 	require("plugins.lsp.handlers").setup()
 
-	local opts = {}
-	for _, server in pairs(Servers) do
+	for server, name in pairs(Servers) do
 		server = vim.split(server, "@")[1]
 
-		opts = {
+		local opts = {
 			on_attach = require("plugins.lsp.handlers").on_attach,
 			capabilities = require("plugins.lsp.handlers").capabilities,
 		}
 
-		local ok, conf_opts = pcall(require, "plugins.lsp.settings." .. server)
+		local ok, lang = pcall(require, "plugins.lsp.settings." .. name)
 		if ok then
-			opts = vim.tbl_deep_extend("force", conf_opts, opts)
+			opts = vim.tbl_deep_extend("force", lang.settings(), opts)
 		end
 
 		lspconfig[server].setup(opts)
