@@ -16,8 +16,8 @@ local kind_icons = {
 	Method = "󰆧",
 	Function = "󰆧",
 	Constructor = "",
-	Field = "󰮄",
-	Variable = "󰮄",
+	Field = "",
+	Variable = "",
 	Class = "󰌗",
 	Interface = "",
 	Module = "󰅩",
@@ -67,6 +67,7 @@ M.config = function()
 				luasnip.lsp_expand(args.body)
 			end,
 		},
+		preselect = cmp.PreselectMode.None,
 		mapping = cmp.mapping.preset.insert({
 			["<C-k>"] = cmp.mapping.select_prev_item(),
 			["<C-j>"] = cmp.mapping.select_next_item(),
@@ -83,14 +84,21 @@ M.config = function()
 				vim_item.kind = kind_icons[vim_item.kind]
 				vim_item.menu = ({
 					nvim_lsp = "",
-					luasnip = "",
+					luasnip = "",
 					buffer = "",
 					path = "",
-					-- emoji = "",
 				})[entry.source.name]
 				return vim_item
 			end,
 		},
+		enabled = function()
+			local in_prompt = vim.api.nvim_buf_get_option(0, "buftype") == "prompt"
+			if in_prompt then -- this will disable cmp in the Telescope window (taken from the default config)
+				return false
+			end
+			local context = require("cmp.config.context")
+			return not (context.in_treesitter_capture("comment") == true or context.in_syntax_group("Comment"))
+		end,
 		view = {
 			entries = { name = "custom", selection_order = "near_cursor" },
 		},
@@ -113,7 +121,7 @@ M.config = function()
 				cmp.config.compare.exact,
 				cmp.config.compare.scopes,
 				cmp.config.compare.score,
-				cmp.config.compare.recently_used,
+				-- cmp.config.compare.recently_used,
 				cmp.config.compare.locality,
 				cmp.config.compare.kind,
 				cmp.config.compare.sort_text,
@@ -147,8 +155,10 @@ M.config = function()
 		}),
 	})
 
-	local npairs_cmp = require("nvim-autopairs.completion.cmp")
-	cmp.event:on("confirm_done", npairs_cmp.on_confirm_done())
+	local ok, npairs_cmp = pcall(require, "nvim-autopairs.completion.cmp")
+	if ok then
+		cmp.event:on("confirm_done", npairs_cmp.on_confirm_done())
+	end
 end
 
 return M

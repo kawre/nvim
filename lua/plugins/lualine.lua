@@ -27,7 +27,6 @@ M.opts = {
 		lualine_b = { "branch" },
 		lualine_c = {
 			{ "filename", symbols = { modified = "", readonly = "", newfile = "", unnamed = "" } },
-			-- 
 		},
 		lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_y = { "progress" },

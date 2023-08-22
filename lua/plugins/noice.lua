@@ -20,9 +20,9 @@ M.opts = {
 	},
 	presets = {
 		bottom_search = true,
-		command_palette = false,
+		command_palette = true,
 		long_message_to_split = true,
-		inc_rename = false,
+		inc_rename = true,
 		lsp_doc_border = false,
 	},
 	views = {
@@ -40,9 +40,16 @@ M.opts = {
 	routes = {
 		{
 			filter = {
-				event = "msg_show",
-				kind = "",
-				find = "written",
+				any = {
+					{ event = "msg_show", find = "written" },
+					{ event = "msg_show", find = "fewer lines" },
+					{ event = "msg_show", find = "more line" },
+					{ event = "msg_show", find = "yanked" },
+					{ event = "msg_show", find = "No lines in buffer" },
+					{ event = "msg_show", find = "change; " },
+					{ event = "msg_show", find = "line less; " },
+					{ event = "msg_show", kind = "wmsg" },
+				},
 			},
 			opts = { skip = true },
 		},

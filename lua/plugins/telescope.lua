@@ -14,6 +14,7 @@ M.keys = {
 	{ "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Find Buffer" },
 	{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find Keymap" },
 	{ "<leader>fp", "<cmd>Telescope project<CR>", desc = "Find Project" },
+	{ "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Find Tags" },
 }
 
 M.config = function()

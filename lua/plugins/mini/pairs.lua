@@ -1,6 +1,7 @@
 local M = {
-	"kylechui/nvim-surround",
+	"echasnovski/mini.pairs",
 	event = "VeryLazy",
+	enabled = false,
 }
 
 M.opts = {}

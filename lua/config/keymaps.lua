@@ -18,9 +18,8 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<S-l>", "<cmd>bnext<CR>", opts)
 keymap("n", "<S-h>", "<cmd>bprevious<CR>", opts)
 keymap("n", "<C-w>", "<cmd>b #<CR>", opts)
-
 -- better paste
-keymap("v", "p", '"_dP', opts)
+-- keymap("v", "p", '"_dP', opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", "<cmd>resize -2<CR>", opts)
@@ -28,5 +27,8 @@ keymap("n", "<C-Down>", "<cmd>resize +2<CR>", opts)
 keymap("n", "<C-Left>", "<cmd>vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", "<cmd>vertical resize +2<CR>", opts)
 
--- Clear highlights
-keymap("n", "<leader>ch", "<cmd>nohlsearch<CR>", opts)
+-- clear highlights
+keymap("n", "<leader>ch", "<cmd>nohlsearch<cr>", opts)
+
+keymap("v", "<tab>", ">gv", opts)
+keymap("v", "<S-Tab>", "<gv", opts)

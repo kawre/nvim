@@ -12,6 +12,7 @@ opt.pumheight = 10 -- pop up menu height
 opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
 opt.showtabline = 0 -- always show tabs
 opt.smartcase = false -- smart case vim.opt.smartindent = false -- make indenting smarter again
+opt.smartindent = true
 opt.splitbelow = true -- force all horizontal splits to go below current window
 opt.splitright = true -- force all vertical splits to go to the right of current window
 opt.swapfile = false -- creates a swapfile
@@ -29,7 +30,7 @@ opt.laststatus = 3 -- only the last window will always have a status line
 opt.showcmd = false -- hide (partial) command in the last line of the screen (for performance)
 opt.ruler = false -- hide the line and column number of the cursor position
 opt.numberwidth = 4 -- minimal number of columns to use for the line number {default 4}
-opt.signcolumn = "number" -- always show the sign column, otherwise it would shift the text each time
+opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 opt.wrap = false -- display lines as one long line
 opt.scrolloff = 8 -- minimal number of screen lines to keep above and below the cursor
 opt.sidescrolloff = 8 -- minimal number of screen columns to keep to the left and right of the cursor if wrap is `false`
