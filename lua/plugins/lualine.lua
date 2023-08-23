@@ -28,7 +28,12 @@ M.opts = {
 		lualine_c = {
 			{ "filename", symbols = { modified = "", readonly = "", newfile = "", unnamed = "" } },
 		},
-		lualine_x = { "encoding", "fileformat", "filetype" },
+		lualine_x = {
+			{ "diagnostics", symbols = { error = "󰅚 ", warn = " ", info = " ", hint = "󰛩 " } },
+			"encoding",
+			"fileformat",
+			"filetype",
+		},
 		lualine_y = { "progress" },
 		lualine_z = { "location" },
 	},

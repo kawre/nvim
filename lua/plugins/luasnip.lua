@@ -40,5 +40,8 @@ M.opts = {
 	delete_check_events = "TextChanged",
 }
 
+-- M.init = function()
+-- 	vim.cmd("autocmd InsertEnter * LuaSnipUnlinkCurrent")
+-- end
 
 return M

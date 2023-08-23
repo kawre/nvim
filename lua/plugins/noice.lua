@@ -49,6 +49,7 @@ M.opts = {
 					{ event = "msg_show", find = "change; " },
 					{ event = "msg_show", find = "line less; " },
 					{ event = "msg_show", kind = "wmsg" },
+					{ event = "msg_show", find = "No active Snippet" },
 				},
 			},
 			opts = { skip = true },
