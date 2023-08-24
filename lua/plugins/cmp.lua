@@ -13,7 +13,7 @@ local M = {
 
 local function truncateString(str, maxLen)
 	if #str > maxLen then
-		return str:sub(1, maxLen - 3) .. "..."
+		return str:sub(1, maxLen - 3) .. "…"
 	else
 		return str
 	end
@@ -54,7 +54,7 @@ M.config = function()
 			fields = { "kind", "abbr", "menu" },
 			format = function(entry, vim_item)
 				vim_item.abbr = truncateString(vim_item.abbr, 50)
-				vim_item.kind = _G.icons[vim_item.kind]
+				vim_item.kind = _G.kinds[vim_item.kind]
 				vim_item.menu = ({
 					nvim_lsp = "",
 					luasnip = "",

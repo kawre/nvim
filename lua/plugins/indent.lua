@@ -1,14 +1,17 @@
 local M = { "lukas-reineke/indent-blankline.nvim" }
 
-M.init = function()
-	-- vim.opt.listchars:append("space:⋅")
-	-- vim.opt.listchars:append("eol:↴")
-end
+-- M.init = function()
+-- vim.cmd([[highlight IndentBlanklineIndent1 guifg=#696D86 gui=nocombine]])
+-- end
 
 M.opts = {
-	space_char_blankline = " ",
-	show_current_context = true,
-	show_current_context_start = true,
+	-- show_current_context = true,
+	-- context_char = "▎",
+	char = "▎",
+	-- show_current_context_start = true,
+	-- strict_tabs = true,
+	-- max_indent_increase = 1,
+	-- context_highlight_list = { "IndentBlanklineIndent1" },
 }
 
 return M

@@ -28,7 +28,12 @@ M.opts = {
 		lualine_c = {
 			{
 				"filename",
-				symbols = { modified = _G.signs.modified, readonly = _G.signs.readonly, newfile = "", unnamed = "" },
+				symbols = {
+					modified = _G.symbols.modified,
+					readonly = _G.symbols.readonly,
+					newfile = _G.symbols.newfile,
+					unnamed = _G.symbols.unnamed,
+				},
 			},
 		},
 		lualine_x = {

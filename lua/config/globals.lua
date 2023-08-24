@@ -12,13 +12,13 @@ _G.servers = {
 	clangd = "clang",
 }
 
-_G.icons = {
+_G.kinds = {
 	Text = "󰉿",
 	Method = "󰊕",
 	Function = "󰊕",
 	Constructor = "",
-	Field = "󰀫",
-	Variable = "󰀫",
+	Field = "α",
+	Variable = "α",
 	Class = "󰌗",
 	Interface = "",
 	Module = "󰅩",
@@ -34,19 +34,19 @@ _G.icons = {
 	File = "󰈙",
 	Reference = "",
 	Folder = "󰉖",
-	Constant = "󰏿",
+	Constant = "π",
 	Struct = "",
-	Event = "",
+	Event = "ϟ",
 	Operator = "󰆕",
-	TypeParameter = "󰊄",
+	TypeParameter = "τ",
 	Package = "",
-	String = "󰉾",
-	Number = "󱃮",
+	String = '󰉾""',
+	Number = "λ",
 	Boolean = "",
 	Array = "󰅪",
 	Object = "󰅩",
-	Key = "󰌆",
-	Null = "󰟢",
+	Key = "",
+	Null = "∅",
 }
 
 _G.signs = {
@@ -54,8 +54,13 @@ _G.signs = {
 	warn = "",
 	hint = "󰛨",
 	info = "",
+}
+
+_G.symbols = {
 	modified = "",
 	readonly = "",
 	newfile = "",
 	unnamed = "",
+	ellipsis = "…",
+	separator = "",
 }

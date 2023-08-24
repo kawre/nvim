@@ -1,35 +1,34 @@
-local M_lspconfig = {
-	"williamboman/mason-lspconfig.nvim",
-}
-
 local M = {
-	"williamboman/mason.nvim",
-	dependencies = { M_lspconfig },
-}
-
-M.opts = {
-	ui = {
-		border = "none",
-		icons = {
-			package_installed = "◍",
-			package_pending = "◍",
-			package_uninstalled = "◍",
-		},
+	"williamboman/mason-lspconfig.nvim",
+	dependencies = {
+		"williamboman/mason.nvim",
 	},
-	log_level = vim.log.levels.INFO,
-	max_concurrent_installers = 4,
 }
 
-M_lspconfig.opts = function(_, opts)
-	require("mason-lspconfig")
+M.config = function()
+	require("mason").setup({
+		ui = {
+			border = "none",
+			icons = {
+				package_installed = "◍",
+				package_pending = "◍",
+				package_uninstalled = "◍",
+			},
+			log_level = vim.log.levels.INFO,
+			max_concurrent_installers = 4,
+		},
+	})
 
-	local res = {}
-	for key, _ in pairs(_G.servers) do
-		table.insert(res, key)
-	end
-
-	opts.ensure_installed = res
-	opts.automatic_installation = true
+	require("mason-lspconfig").setup({
+		function()
+			local ensure_installed = {}
+			for key, _ in pairs(_G.servers) do
+				table.insert(ensure_installed, key)
+			end
+			return ensure_installed
+		end,
+		automatic_installation = true,
+	})
 end
 
 return M
