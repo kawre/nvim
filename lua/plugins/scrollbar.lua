@@ -14,6 +14,7 @@ M.opts = {
 		"TelescopePrompt",
 		"neo-tree",
 		"lazy",
+		"Telescope",
 	},
 }
 

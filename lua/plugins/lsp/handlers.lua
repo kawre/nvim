@@ -8,10 +8,10 @@ M.capabilities = ncmp.default_capabilities(M.capabilities)
 
 M.setup = function()
 	local signs = {
-		{ name = "DiagnosticSignError", text = "" },
-		{ name = "DiagnosticSignWarn", text = "" },
-		{ name = "DiagnosticSignHint", text = "󰛨" },
-		{ name = "DiagnosticSignInfo", text = "" },
+		{ name = "DiagnosticSignError", text = _G.signs.error },
+		{ name = "DiagnosticSignWarn", text = _G.signs.warn },
+		{ name = "DiagnosticSignHint", text = _G.signs.hint },
+		{ name = "DiagnosticSignInfo", text = _G.signs.info },
 	}
 
 	for _, sign in ipairs(signs) do

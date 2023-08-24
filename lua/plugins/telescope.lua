@@ -33,14 +33,16 @@ M.config = function()
 			},
 		},
 		sync_with_nvim_tree = true,
-		mappings = {
-			i = {
-				["<Down>"] = actions.cycle_history_next,
-				["<Up>"] = actions.cycle_history_prev,
-				["<C-j>"] = actions.move_selection_next,
-				["<C-k>"] = actions.move_selection_previous,
-			},
-		},
+		-- mappings = {
+		-- 	i = {
+		-- 		["<Down>"] = actions.cycle_history_next,
+		-- 		["<Up>"] = actions.cycle_history_prev,
+		-- 		["<C-k>"] = actions.cycle_history_prev,
+		-- 		["<C-j>"] = actions.cycle_history_next,
+		-- 		["<C-p>"] = actions.move_selection_next,
+		-- 		["<C-n>"] = actions.move_selection_previous,
+		-- 	},
+		-- },
 		extensions = {
 			project = {
 				base_dirs = { "~/projects" },

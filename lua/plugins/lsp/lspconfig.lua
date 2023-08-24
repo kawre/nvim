@@ -6,7 +6,7 @@ M.config = function()
 	local lspconfig = require("lspconfig")
 	require("plugins.lsp.handlers").setup()
 
-	for server, name in pairs(Servers) do
+	for server, name in pairs(_G.servers) do
 		server = vim.split(server, "@")[1]
 
 		local opts = {

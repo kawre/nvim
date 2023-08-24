@@ -10,7 +10,7 @@ M.opts = function(_, opts)
 		["*"] = require("formatter.filetypes.any").remove_trailing_whitespace,
 	}
 
-	for _, server in pairs(Servers) do
+	for _, server in pairs(_G.servers) do
 		local ok, lang = pcall(require, "plugins.lsp.settings." .. server)
 		if ok then
 			types[server] = lang.formatter()

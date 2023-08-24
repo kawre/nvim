@@ -26,10 +26,21 @@ M.opts = {
 		lualine_a = { "mode" },
 		lualine_b = { "branch" },
 		lualine_c = {
-			{ "filename", symbols = { modified = "", readonly = "", newfile = "", unnamed = "" } },
+			{
+				"filename",
+				symbols = { modified = _G.signs.modified, readonly = _G.signs.readonly, newfile = "", unnamed = "" },
+			},
 		},
 		lualine_x = {
-			{ "diagnostics", symbols = { error = "󰅚 ", warn = " ", info = " ", hint = "󰛩 " } },
+			{
+				"diagnostics",
+				symbols = {
+					error = _G.signs.error .. " ",
+					warn = _G.signs.warn .. " ",
+					info = _G.signs.info .. " ",
+					hint = _G.signs.hint .. " ",
+				},
+			},
 			"encoding",
 			"fileformat",
 			"filetype",

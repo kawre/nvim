@@ -11,34 +11,6 @@ local M = {
 	version = false,
 }
 
-local kind_icons = {
-	Text = "󰉿",
-	Method = "󰆧",
-	Function = "󰆧",
-	Constructor = "",
-	Field = "",
-	Variable = "",
-	Class = "󰌗",
-	Interface = "",
-	Module = "󰅩",
-	Property = "",
-	Unit = "",
-	Value = "󰎠",
-	Enum = "",
-	Keyword = "󰌋",
-	Snippet = "",
-	Color = "󰏘",
-	File = "󰈙",
-	Reference = "",
-	Folder = "󰉋",
-	EnumMember = "",
-	Constant = "󰏿",
-	Struct = "",
-	Event = "",
-	Operator = "󰆕",
-	TypeParameter = "󰊄",
-}
-
 local function truncateString(str, maxLen)
 	if #str > maxLen then
 		return str:sub(1, maxLen - 3) .. "..."
@@ -69,19 +41,20 @@ M.config = function()
 		},
 		preselect = cmp.PreselectMode.None,
 		mapping = cmp.mapping.preset.insert({
-			["<C-k>"] = cmp.mapping.select_prev_item(),
-			["<C-j>"] = cmp.mapping.select_next_item(),
+			["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+			["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
 			["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 			["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 			["<C-c>"] = cmp.mapping.complete(),
 			["<C-e>"] = cmp.mapping.abort(),
 			["<CR>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
 		}),
+
 		formatting = {
 			fields = { "kind", "abbr", "menu" },
 			format = function(entry, vim_item)
-				vim_item.abbr = truncateString(vim_item.abbr, 40)
-				vim_item.kind = kind_icons[vim_item.kind]
+				vim_item.abbr = truncateString(vim_item.abbr, 50)
+				vim_item.kind = _G.icons[vim_item.kind]
 				vim_item.menu = ({
 					nvim_lsp = "",
 					luasnip = "",
@@ -122,10 +95,10 @@ M.config = function()
 				cmp.config.compare.score,
 				cmp.config.compare.sort_text,
 				cmp.config.compare.length,
-				-- cmp.config.compare.scopes,
+				cmp.config.compare.locality,
 				cmp.config.compare.recently_used,
-				-- cmp.config.compare.locality,
-				-- cmp.config.compare.order,
+				cmp.config.compare.scopes,
+				cmp.config.compare.order,
 				cmp.config.compare.kind,
 			},
 		},
