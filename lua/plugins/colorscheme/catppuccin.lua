@@ -20,6 +20,12 @@ M.opts = {
 		lsp_trouble = true,
 		mason = true,
 		mini = true,
+		barbecue = {
+			dim_dirname = true, -- directory name is dimmed by default
+			bold_basename = true,
+			dim_context = true,
+			alt_background = false,
+		},
 		native_lsp = {
 			enabled = true,
 			underlines = {

@@ -1,10 +1,10 @@
 local M = {
-	filetypes = { "rust" },
+	filetypes = { "c", "cpp" },
 }
 
 function M.formatter(util)
 	return {
-		require("formatter.filetypes.rust").rustfmt,
+		require("formatter.filetypes.cpp").clangformat,
 
 		function()
 			return {}

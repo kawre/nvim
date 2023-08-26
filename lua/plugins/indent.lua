@@ -1,4 +1,7 @@
-local M = { "lukas-reineke/indent-blankline.nvim" }
+local M = {
+	"lukas-reineke/indent-blankline.nvim",
+	enabled = false,
+}
 
 -- M.init = function()
 -- vim.cmd([[highlight IndentBlanklineIndent1 guifg=#696D86 gui=nocombine]])

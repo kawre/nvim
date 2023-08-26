@@ -1,5 +1,9 @@
 local M = {
 	"nvim-lualine/lualine.nvim",
+	dependencies = {
+		"folke/noice.nvim",
+		"nvim-tree/nvim-web-devicons",
+	},
 }
 
 M.opts = {
@@ -11,7 +15,10 @@ M.opts = {
 		disabled_filetypes = {
 			"lazy",
 			"NvimTree",
+			"alpha",
+			"help",
 			"neo-tree",
+			"neogitstatus",
 		},
 		ignore_focus = {},
 		always_divide_middle = true,
@@ -23,11 +30,14 @@ M.opts = {
 		},
 	},
 	sections = {
-		lualine_a = { "mode" },
+		lualine_a = {
+			{ "mode", right_padding = 2 },
+		},
 		lualine_b = { "branch" },
 		lualine_c = {
 			{
 				"filename",
+				icon_only = true,
 				symbols = {
 					modified = _G.symbols.modified,
 					readonly = _G.symbols.readonly,
@@ -35,8 +45,6 @@ M.opts = {
 					unnamed = _G.symbols.unnamed,
 				},
 			},
-		},
-		lualine_x = {
 			{
 				"diagnostics",
 				symbols = {
@@ -46,9 +54,20 @@ M.opts = {
 					hint = _G.signs.hint .. " ",
 				},
 			},
-			"encoding",
-			"fileformat",
+		},
+		lualine_x = {
+			-- {
+			-- 	"diagnostics",
+			-- 	symbols = {
+			-- 		error = _G.signs.error .. " ",
+			-- 		warn = _G.signs.warn .. " ",
+			-- 		info = _G.signs.info .. " ",
+			-- 		hint = _G.signs.hint .. " ",
+			-- 	},
+			-- },
 			"filetype",
+			"fileformat",
+			"encoding",
 		},
 		lualine_y = { "progress" },
 		lualine_z = { "location" },

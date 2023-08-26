@@ -30,5 +30,5 @@ keymap("n", "<C-Right>", "<cmd>vertical resize +2<CR>", opts)
 keymap("n", "<leader>ch", "<cmd>nohlsearch<cr>", opts)
 
 -- tab indentation
-keymap("v", "<tab>", ">gv", opts)
+keymap("v", "<Tab>", ">gv", opts)
 keymap("v", "<S-Tab>", "<gv", opts)

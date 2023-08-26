@@ -1,9 +1,8 @@
 local M = {
 	"nvim-telescope/telescope.nvim",
 	dependencies = {
-		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope-project.nvim",
-		"ThePrimeagen/harpoon",
+		"nvim-lua/plenary.nvim",
 	},
 	lazy = false,
 }
@@ -19,8 +18,7 @@ M.keys = {
 
 M.config = function()
 	local telescope = require("telescope")
-	require("telescope").load_extension("project")
-	local actions = require("telescope.actions")
+	require("telescope.actions")
 
 	telescope.setup({
 		defaults = {
@@ -33,23 +31,15 @@ M.config = function()
 			},
 		},
 		sync_with_nvim_tree = true,
-		-- mappings = {
-		-- 	i = {
-		-- 		["<Down>"] = actions.cycle_history_next,
-		-- 		["<Up>"] = actions.cycle_history_prev,
-		-- 		["<C-k>"] = actions.cycle_history_prev,
-		-- 		["<C-j>"] = actions.cycle_history_next,
-		-- 		["<C-p>"] = actions.move_selection_next,
-		-- 		["<C-n>"] = actions.move_selection_previous,
-		-- 	},
-		-- },
 		extensions = {
 			project = {
 				base_dirs = { "~/projects" },
-				-- on_project_selected = function(prompt_bufnr)
-				-- 	project_actions.change_working_directory(prompt_bufnr, false)
-				-- 	require("harpoon.ui").nav_file(1)
-				-- end,
+				hidden_files = true, -- default: false
+				theme = "dropdown",
+				order_by = "asc",
+				search_by = "title",
+				sync_with_nvim_tree = true, -- default false
+				-- default for on_project_selected = find project files
 			},
 		},
 	})

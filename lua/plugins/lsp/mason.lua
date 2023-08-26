@@ -10,9 +10,9 @@ M.config = function()
 		ui = {
 			border = "none",
 			icons = {
-				package_installed = "◍",
-				package_pending = "◍",
-				package_uninstalled = "◍",
+				package_installed = "",
+				package_pending = "",
+				package_uninstalled = "",
 			},
 			log_level = vim.log.levels.INFO,
 			max_concurrent_installers = 4,
@@ -22,8 +22,8 @@ M.config = function()
 	require("mason-lspconfig").setup({
 		function()
 			local ensure_installed = {}
-			for key, _ in pairs(_G.servers) do
-				table.insert(ensure_installed, key)
+			for _, lsp in pairs(_G.servers) do
+				table.insert(ensure_installed, lsp)
 			end
 			return ensure_installed
 		end,

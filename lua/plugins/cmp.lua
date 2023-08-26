@@ -48,8 +48,19 @@ M.config = function()
 			["<C-c>"] = cmp.mapping.complete(),
 			["<C-e>"] = cmp.mapping.abort(),
 			["<CR>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
+			["<Tab>"] = function()
+				if cmp.visible() then
+					cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select })
+				elseif luasnip.expand_or_jumpable() then
+					vim.fn.feedkeys(
+						vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true),
+						""
+					)
+				else
+					vim.cmd("Tabout")
+				end
+			end,
 		}),
-
 		formatting = {
 			fields = { "kind", "abbr", "menu" },
 			format = function(entry, vim_item)

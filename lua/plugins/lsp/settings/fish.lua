@@ -1,10 +1,10 @@
 local M = {
-	filetypes = { "rust" },
+	filetypes = { "fish" },
 }
 
 function M.formatter(util)
 	return {
-		require("formatter.filetypes.rust").rustfmt,
+		require("formatter.filetypes.fish").fishindent,
 
 		function()
 			return {}
@@ -13,7 +13,7 @@ function M.formatter(util)
 end
 
 function M.settings()
-	return {}
+  return nil
 end
 
 return M

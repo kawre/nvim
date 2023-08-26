@@ -3,12 +3,10 @@ local M = {
 	cmd = "IncRename",
 }
 
-M.opts = {}
+M.keys = {
+	{ "<leader>rn", ":IncRename ", desc = "Rename" },
+}
 
-M.init = function()
-	vim.keymap.set("n", "<leader>rn", function()
-		return ":IncRename " .. vim.fn.expand("<cword>")
-	end, { expr = true })
-end
+M.opts = {}
 
 return M
