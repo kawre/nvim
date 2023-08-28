@@ -13,11 +13,11 @@ _G.servers = {
 }
 
 _G.kinds = {
-	Text = "τ",
-	Method = "󰊕",
+	Text = "󰉿",
+	Method = "",
 	Function = "󰊕",
 	Constructor = "",
-	Field = "α",
+	Field = "",
 	Variable = "α",
 	Class = "󰌗",
 	Interface = "",

@@ -13,7 +13,7 @@ local M = {
 
 local function truncateString(str, maxLen)
 	if #str > maxLen then
-		return str:sub(1, maxLen - 3) .. "…"
+		return str:sub(1, maxLen - 1) .. "…"
 	else
 		return str
 	end
@@ -62,17 +62,15 @@ M.config = function()
 			end,
 		}),
 		formatting = {
+			expandable_indicator = false,
 			fields = { "kind", "abbr", "menu" },
-			format = function(entry, vim_item)
-				vim_item.abbr = truncateString(vim_item.abbr, 50)
-				vim_item.kind = _G.kinds[vim_item.kind]
-				vim_item.menu = ({
-					nvim_lsp = "",
-					luasnip = "",
-					buffer = "",
-					path = "",
-				})[entry.source.name]
-				return vim_item
+			format = function(_, item)
+				item.menu = item.kind
+				item.menu_hl_group = "CmpItemKind" .. item.kind
+				item.kind = _G.kinds[item.kind]
+				item.abbr = truncateString(item.abbr, 50)
+
+				return item
 			end,
 		},
 		enabled = function()
@@ -94,8 +92,11 @@ M.config = function()
 			{ name = "path" },
 		}),
 		window = {
-			-- documentation = cmp.config.window.bordered(),
-			-- completion = cmp.config.window.bordered(),
+			documentation = {
+				max_height = 18,
+				max_width = 80,
+				side_padding = 1,
+			},
 		},
 		sorting = {
 			priority_weight = 2,

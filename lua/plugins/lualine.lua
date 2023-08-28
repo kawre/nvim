@@ -35,16 +35,17 @@ M.opts = {
 		},
 		lualine_b = { "branch" },
 		lualine_c = {
-			{
-				"filename",
-				icon_only = true,
-				symbols = {
-					modified = _G.symbols.modified,
-					readonly = _G.symbols.readonly,
-					newfile = _G.symbols.newfile,
-					unnamed = _G.symbols.unnamed,
-				},
-			},
+			-- {
+			-- 	"filename",
+			-- 	icon_only = true,
+			-- 	symbols = {
+			-- 		modified = _G.symbols.modified,
+			-- 		readonly = _G.symbols.readonly,
+			-- 		newfile = _G.symbols.newfile,
+			-- 		unnamed = _G.symbols.unnamed,
+			-- 	},
+			-- },
+			"filetype",
 			{
 				"diagnostics",
 				symbols = {
@@ -65,9 +66,8 @@ M.opts = {
 			-- 		hint = _G.signs.hint .. " ",
 			-- 	},
 			-- },
-			"filetype",
-			"fileformat",
 			"encoding",
+			"fileformat",
 		},
 		lualine_y = { "progress" },
 		lualine_z = { "location" },

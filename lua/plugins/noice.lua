@@ -5,6 +5,7 @@ local M = {
 		"MunifTanjim/nui.nvim",
 		"rcarriga/nvim-notify",
 	},
+	-- enabled = false,
 }
 
 M.opts = {
@@ -21,6 +22,7 @@ M.opts = {
 		long_message_to_split = true,
 		inc_rename = true,
 		lsp_doc_border = false,
+		g,
 	},
 	views = {
 		cmdline_popup = {

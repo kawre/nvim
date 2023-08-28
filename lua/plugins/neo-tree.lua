@@ -16,6 +16,8 @@ M.keys = {
 M.init = function()
 	vim.g.loaded_netrw = 1
 	vim.g.loaded_netrwPlugin = 1
+
+	vim.cmd([[hi link NeoTreeGitAdded String]])
 end
 
 M.opts = {
@@ -24,6 +26,7 @@ M.opts = {
 		width = 42,
 	},
 	default_component_configs = {
+		-- indent_size = 4,
 		icon = {
 			folder_closed = "",
 			folder_open = "",
@@ -40,7 +43,7 @@ M.opts = {
 		git_status = {
 			symbols = {
 				-- Change type
-				added = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
+				added = "+", -- or "✚", but this is redundant info if you use git_status_colors on the name
 				modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
 				deleted = "✖", -- this can only be used in the git_status source
 				renamed = "󰁕", -- this can only be used in the git_status source
