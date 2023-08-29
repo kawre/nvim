@@ -1,4 +1,4 @@
-local opt = vim.opt
+local opt = vim.opt_local
 
 opt.tabstop = 4
 opt.shiftwidth = 4
@@ -86,12 +86,12 @@ local config = {
 			},
 			format = {
 				enabled = true,
-				-- settings = {
-				-- 	-- url = "~/.config/jdtls/intellij-java-google-style.xml",
-				-- 	-- profile = "GoogleStyle",
-				-- 	url = "~/.config/jdtls/Default.xml",
-				-- 	profile = "Default",
-				-- },
+				settings = {
+					-- url = "~/.config/jdtls/intellij-java-google-style.xml",
+					-- profile = "GoogleStyle",
+					url = "~/.config/jdtls/Default.xml",
+					profile = "Default",
+				},
 			},
 		},
 	},
