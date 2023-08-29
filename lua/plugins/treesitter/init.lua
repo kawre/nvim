@@ -11,7 +11,16 @@ local M = {
 }
 
 M.opts = {
-	ensure_installed = "all",
+	-- ensure_installed = "all",
+	ensure_installed = function()
+		local ens = {}
+
+		for _, lsp in pairs(_G.servers) do
+			table.insert(ens, lsp)
+		end
+
+		return ens
+	end,
 	sync_install = false,
 	indent = { enable = true },
 	highlight = {

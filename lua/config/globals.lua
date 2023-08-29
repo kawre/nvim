@@ -7,7 +7,6 @@ _G.servers = {
 	bash = "bashls",
 	json = "jsonls",
 	yaml = "yamlls",
-	java = "jdtls",
 	rust = "rust_analyzer",
 	c = "clangd",
 }

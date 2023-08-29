@@ -3,9 +3,8 @@ local M = {
 	event = "VeryLazy",
 	dependencies = {
 		"MunifTanjim/nui.nvim",
-		"rcarriga/nvim-notify",
+		{ "rcarriga/nvim-notify", opts = { render = "compact" } },
 	},
-	-- enabled = false,
 }
 
 M.opts = {
@@ -22,7 +21,6 @@ M.opts = {
 		long_message_to_split = true,
 		inc_rename = true,
 		lsp_doc_border = false,
-		g,
 	},
 	views = {
 		cmdline_popup = {
@@ -46,9 +44,14 @@ M.opts = {
 					{ event = "msg_show", find = "yanked" },
 					{ event = "msg_show", find = "No lines in buffer" },
 					{ event = "msg_show", find = "change; " },
+					{ event = "msg_show", find = "changes; " },
 					{ event = "msg_show", find = "line less; " },
 					{ event = "msg_show", kind = "wmsg" },
 					{ event = "msg_show", find = "No active Snippet" },
+					{ event = "msg_show", find = "nil" },
+					{ event = "msg_show", kind = "progress" },
+					{ event = "lsp", kind = "progress", find = "Validate documents" },
+					{ event = "lsp", kind = "progress", find = "Publish Diagnostics" },
 				},
 			},
 			opts = { skip = true },

@@ -8,6 +8,7 @@ M.opts = function(_, opts)
 	local types = {
 		["*"] = require("formatter.filetypes.any").remove_trailing_whitespace,
 		fish = require("plugins.lsp.settings.fish").formatter(util),
+		java = require("plugins.lsp.settings.java").formatter(util),
 	}
 
 	for lang, _ in pairs(_G.servers) do

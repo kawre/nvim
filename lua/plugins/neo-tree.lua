@@ -62,6 +62,7 @@ M.opts = {
 		-- },
 	},
 	filesystem = {
+		group_empty_dirs = true,
 		follow_current_file = { enabled = true, leave_dirs_open = true },
 		filtered_items = {
 			visible = false, -- when true, they will just be displayed differently than normal items

@@ -1,6 +1,4 @@
-local M = {
-	filetypes = { "c", "cpp" },
-}
+local M = { filetypes = { "c", "cpp" } }
 
 function M.formatter(util)
 	return {

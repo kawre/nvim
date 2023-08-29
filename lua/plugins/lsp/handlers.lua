@@ -38,13 +38,13 @@ M.setup = function()
 
 	vim.diagnostic.config(config)
 
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "rounded",
-	})
-
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = "rounded",
-	})
+	-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	-- 	border = "rounded",
+	-- })
+	--
+	-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+	-- 	border = "rounded",
+	-- })
 
 	-- vim.lsp.handlers["textDocument/codeAction"] = vim.lsp.with(vim.lsp.handlers.code_action, {
 	-- 	border = "rounded",
@@ -71,16 +71,11 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-	if client.name == "tsserver" or "jdt.ls" or "sumneko_lua" then
+	if client.name == "tsserver" or client.name == "jdtls" then
 		client.server_capabilitiesldocumentFormattingProvider = false
 	end
 
 	lsp_keymaps(bufnr)
-	-- local status_ok, illuminate = pcall(require, "illuminate")
-	-- if not status_ok then
-	-- return
-	-- end
-	-- illuminate.on_attach(client)
 end
 
 return M
