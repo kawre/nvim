@@ -13,8 +13,8 @@ M.config = function()
 		}
 
 		local ok, config = pcall(require, "plugins.lsp.settings." .. lang)
-		if ok and config.setting ~= nil then
-			opts = vim.tbl_deep_extend("force", config.settings(), opts)
+		if ok then
+			opts = vim.tbl_deep_extend("force", config.settings() or {}, opts)
 		end
 
 		lspconfig[lsp].setup(opts)

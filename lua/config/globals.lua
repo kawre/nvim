@@ -8,7 +8,9 @@ _G.servers = {
 	json = "jsonls",
 	yaml = "yamlls",
 	rust = "rust_analyzer",
+	-- java = "jdtls",
 	c = "clangd",
+	-- fish = "fish",
 }
 
 _G.kinds = {

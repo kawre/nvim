@@ -5,6 +5,7 @@ local M = {
 		"nvim-telescope/telescope.nvim", -- optional
 		"sindrets/diffview.nvim", -- optional
 	},
+	enabled = false,
 }
 
 M.config = true

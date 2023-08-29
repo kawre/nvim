@@ -1,6 +1,4 @@
-local M = {
-	filetypes = { "fish" },
-}
+local M = { filetypes = { "fish" } }
 
 function M.formatter(util)
 	return {
@@ -12,8 +10,8 @@ function M.formatter(util)
 	}
 end
 
-function M.settings()
-  return nil
-end
+-- function M.settings()
+-- 	return nil
+-- end
 
 return M

@@ -4,6 +4,6 @@ vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd([[
   augroup FormatAutogroup
     autocmd!
-    autocmd BufWritePost * FormatWrite
+    autocmd BufWritePre * FormatWrite
   augroup END
 ]])
