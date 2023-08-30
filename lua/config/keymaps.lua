@@ -9,7 +9,6 @@ keymap("", "<Space>", "<Nop>", opts)
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 
-keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)

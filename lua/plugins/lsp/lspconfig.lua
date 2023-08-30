@@ -1,22 +1,22 @@
+local Utils = require("config.utils")
+
 local M = {
 	"neovim/nvim-lspconfig",
 }
 
 M.config = function()
 	local lspconfig = require("lspconfig")
-	require("plugins.lsp.handlers").setup()
 
-	for lang, lsp in pairs(_G.servers) do
+	local lsps = Utils.scandir("~/.config/nvim/lua/plugins/lsp/config")
+	for _, lsp in ipairs(lsps) do
+		lsp = vim.split(lsp, ".lua")[1]
+
 		local opts = {
 			on_attach = require("plugins.lsp.handlers").on_attach,
 			capabilities = require("plugins.lsp.handlers").capabilities,
 		}
 
-		local ok, config = pcall(require, "plugins.lsp.settings." .. lang)
-		if ok then
-			opts = vim.tbl_deep_extend("force", config.settings() or {}, opts)
-		end
-
+		opts = vim.tbl_deep_extend("force", opts, require("plugins.lsp.config." .. lsp).setup())
 		lspconfig[lsp].setup(opts)
 	end
 end

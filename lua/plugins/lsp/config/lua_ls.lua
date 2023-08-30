@@ -2,17 +2,7 @@ local M = {
 	filetypes = { "lua" },
 }
 
-function M.formatter(util)
-	return {
-		require("formatter.filetypes.lua").stylua,
-
-		function()
-			return {}
-		end,
-	}
-end
-
-function M.settings()
+M.setup = function()
 	return {
 		settings = {
 			Lua = {

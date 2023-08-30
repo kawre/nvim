@@ -5,6 +5,7 @@ local M = {
 		"MunifTanjim/nui.nvim",
 		{ "rcarriga/nvim-notify", opts = { render = "compact" } },
 	},
+	-- enabled = false,
 }
 
 M.opts = {

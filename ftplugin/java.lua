@@ -4,8 +4,7 @@ opt.tabstop = 4
 opt.shiftwidth = 4
 
 local jdtls = require("jdtls")
-
-local home = "/home/kawre"
+local home = os.getenv("HOME")
 
 local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
 local root_dir = require("jdtls.setup").find_root(root_markers)
@@ -60,7 +59,6 @@ local config = {
 	-- for a list of options
 	settings = {
 		java = {
-			-- home = "/usr/lib/jvm/java-17-openjdk/bin",
 			eclipse = {
 				downloadSources = true,
 			},
@@ -87,10 +85,9 @@ local config = {
 			format = {
 				enabled = true,
 				settings = {
-					-- url = "~/.config/jdtls/intellij-java-google-style.xml",
-					-- profile = "GoogleStyle",
-					url = "~/.config/jdtls/Default.xml",
-					profile = "Default",
+					url = "~/.config/jdtls/intellij-java-google-style.xml",
+					-- url = "~/.config/jdtls/Default.xml",
+					-- profile = "Default",
 				},
 			},
 		},
@@ -127,9 +124,9 @@ local config = {
 	-- See https://github.com/mfussenegger/nvim-jdtls#java-debug-installation
 	--
 	-- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
-	-- init_options = {
-	-- 	bundles = {},
-	-- },
+	init_options = {
+		bundles = {},
+	},
 
 	on_attach = require("plugins.lsp.handlers").on_attach,
 	capabilities = require("plugins.lsp.handlers").capabilities,
@@ -137,6 +134,9 @@ local config = {
 	handlers = {
 		["language/status"] = function() end,
 	},
+
+	filetypes = { "java" },
+	autostart = true,
 }
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.

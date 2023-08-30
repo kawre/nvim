@@ -20,13 +20,19 @@ M.config = function()
 	})
 
 	require("mason-lspconfig").setup({
-		function()
-			local ensure_installed = {}
-			for _, lsp in pairs(_G.servers) do
-				table.insert(ensure_installed, lsp)
-			end
-			return ensure_installed
-		end,
+		-- ensure_installed = {
+		-- 	"bashls",
+		-- 	"clangd",
+		-- 	"cssls",
+		-- 	"html",
+		-- 	"jsonls",
+		-- 	"lua_ls",
+		-- 	"nginx-language-server",
+		-- 	"pyright",
+		-- 	"rust_analyzer",
+		-- 	"taplo",
+		-- 	"tsserver",
+		-- },
 		automatic_installation = true,
 	})
 end
