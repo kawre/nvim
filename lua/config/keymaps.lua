@@ -32,3 +32,6 @@ keymap("n", "<leader>ch", "<cmd>nohlsearch<cr>", opts)
 -- tab indentation
 keymap("v", "<Tab>", ">gv", opts)
 keymap("v", "<S-Tab>", "<gv", opts)
+
+-- write
+keymap("n", "<leader>w", "<cmd>w<cr>", opts)
