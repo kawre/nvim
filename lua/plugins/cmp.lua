@@ -32,6 +32,7 @@ end
 M.config = function()
   local cmp = require("cmp")
   local luasnip = require("luasnip")
+  local user = require("config.user")
 
   cmp.setup({
     snippet = {
@@ -67,7 +68,7 @@ M.config = function()
       format = function(_, item)
         item.menu = item.kind
         item.menu_hl_group = "CmpItemKind" .. item.kind
-        item.kind = _G.kinds[item.kind]
+        item.kind = user.kinds[item.kind]
         item.abbr = truncateString(item.abbr, 50)
 
         return item
@@ -111,7 +112,7 @@ M.config = function()
         cmp.config.compare.locality,
         cmp.config.compare.scopes,
         cmp.config.compare.order,
-        -- cmp.config.compare.kind,
+        cmp.config.compare.kind,
       },
     },
   })

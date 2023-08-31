@@ -7,11 +7,13 @@ M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = ncmp.default_capabilities(M.capabilities)
 
 M.setup = function()
+  local user = require("config.user")
+
   local signs = {
-    { name = "DiagnosticSignError", text = _G.signs.error },
-    { name = "DiagnosticSignWarn",  text = _G.signs.warn },
-    { name = "DiagnosticSignHint",  text = _G.signs.hint },
-    { name = "DiagnosticSignInfo",  text = _G.signs.info },
+    { name = "DiagnosticSignError", text = user.signs.error },
+    { name = "DiagnosticSignWarn",  text = user.signs.warn },
+    { name = "DiagnosticSignHint",  text = user.signs.hint },
+    { name = "DiagnosticSignInfo",  text = user.signs.info },
   }
 
   for _, sign in ipairs(signs) do

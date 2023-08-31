@@ -7,7 +7,7 @@ local M = {
   },
   -- priority = 1000,
   -- lazy = false,
-  -- enabled = false,
+  enabled = false,
 }
 
 M.opts = {

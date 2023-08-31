@@ -2,10 +2,11 @@ local utils = require("config.utils")
 
 local function get_languages()
   local languages = {}
-  local t = utils.scandir("~/.config/nvim/lua/plugins/efm/languages")
 
+  print("test")
+  local t = utils.scandir("~/.config/nvim/lua/plugins/lsp/efmls/languages")
   for _, v in ipairs(t) do
-    local lang = require("plugins.efm.languages." .. v)
+    local lang = require("plugins.lsp.efmls.languages." .. v)
 
     for _, filetype in ipairs(lang.filetypes) do
       languages[filetype] = lang.config
@@ -17,7 +18,7 @@ end
 
 local languages = get_languages()
 
-local efmls_config = {
+return {
   filetypes = vim.tbl_keys(languages),
   settings = {
     rootMarkers = { '.git/' },
@@ -28,5 +29,3 @@ local efmls_config = {
     documentRangeFormatting = true,
   },
 }
-
-return efmls_config
