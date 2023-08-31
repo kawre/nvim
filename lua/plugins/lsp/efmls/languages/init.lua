@@ -3,7 +3,6 @@ local utils = require("config.utils")
 local function get_languages()
   local languages = {}
 
-  print("test")
   local t = utils.scandir("~/.config/nvim/lua/plugins/lsp/efmls/languages")
   for _, v in ipairs(t) do
     local lang = require("plugins.lsp.efmls.languages." .. v)
