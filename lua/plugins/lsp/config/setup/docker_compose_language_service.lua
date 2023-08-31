@@ -1,5 +1,3 @@
-local M = {
-  filetypes = { "yaml.docker-compose" }
-}
+local M = {}
 
 return M
