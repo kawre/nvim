@@ -1,9 +1,14 @@
-local M = {
-  'creativenull/efmls-configs-nvim',
-  version = 'v1.x.x', -- version is optional, but recommended
-  dependencies = {
-    "neovim/nvim-lspconfig",
-  }
-}
+local utils = require("config.utils")
+local languages = utils.get_efm_languages()
 
-return M
+return {
+  filetypes = vim.tbl_keys(languages),
+  settings = {
+    rootMarkers = { '.git/' },
+    languages = languages,
+  },
+  init_options = {
+    documentFormatting = true,
+    documentRangeFormatting = true,
+  },
+}

@@ -1,1 +1,1 @@
-return require("plugins.lsp.efmls.languages")
+return require("plugins.lsp.efmls")

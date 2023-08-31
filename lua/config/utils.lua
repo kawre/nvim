@@ -16,4 +16,23 @@ function M.scandir(directory)
   return t
 end
 
+function M.get_efm_languages()
+  local languages = {}
+
+  local t = M.scandir("~/.config/nvim/lua/plugins/lsp/efmls/languages")
+  for _, v in ipairs(t) do
+    local lang = require("plugins.lsp.efmls.languages." .. v)
+
+    for _, filetype in ipairs(lang.filetypes) do
+      languages[filetype] = lang.config
+    end
+  end
+
+  return languages
+end
+
+function M.get_available_lsps()
+  return M.scandir("~/.config/nvim/lua/plugins/lsp/config/setup")
+end
+
 return M
