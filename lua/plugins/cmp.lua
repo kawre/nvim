@@ -93,11 +93,7 @@ M.config = function()
       { name = "path" },
     }),
     window = {
-      documentation = {
-        max_height = 18,
-        max_width = 80,
-        side_padding = 1,
-      },
+      documentation = cmp.config.window.bordered(),
     },
     sorting = {
       priority_weight = 2,

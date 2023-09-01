@@ -38,7 +38,6 @@ M.opts = {
     lualine_b = {
       {
         "branch",
-        color = { bg = "#181825" }
       }
     },
     lualine_c = {
@@ -71,7 +70,6 @@ M.opts = {
     lualine_y = {
       {
         "progress",
-        color = { bg = "#181825" }
       }
     },
     lualine_z = { "location" },
