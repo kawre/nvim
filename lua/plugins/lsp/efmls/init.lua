@@ -4,7 +4,7 @@ local languages = utils.get_efm_languages()
 return {
   filetypes = vim.tbl_keys(languages),
   settings = {
-    rootMarkers = { '.git/' },
+    rootMarkers = { ".git/" },
     languages = languages,
   },
   init_options = {

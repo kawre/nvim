@@ -23,7 +23,7 @@ end
 M.opts = {
 	window = {
 		position = "left",
-		width = 42,
+		width = 60,
 	},
 	default_component_configs = {
 		-- indent_size = 4,

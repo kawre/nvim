@@ -3,7 +3,7 @@ local M = {
 }
 
 M.config = {
-  require('efmls-configs.formatters.prettier'),
+  require("efmls-configs.formatters.prettier"),
 }
 
 return M

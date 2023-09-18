@@ -60,10 +60,12 @@ local function lsp_keymaps(bufnr)
   keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 end
 
-M.on_attach = function(_, bufnr)
-  -- if client.name == "tsserver" then
-  -- 	client.server_capabilitiesl.documentFormattingProvider = false
-  -- end
+M.on_attach = function(client, bufnr)
+  local disable_formatting = { "tsserver", "lua_ls" }
+
+  if vim.tbl_contains(disable_formatting, client.name) then
+    client.server_capabilities.documentFormattingProvider = false
+  end
 
   lsp_keymaps(bufnr)
 end

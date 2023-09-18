@@ -3,7 +3,8 @@ local M = {
 }
 
 M.config = {
-  require("efmls-configs.linters.luacheck")
+  require("efmls-configs.formatters.stylua"),
+  -- require("efmls-configs.linters.luacheck"),
 }
 
 return M

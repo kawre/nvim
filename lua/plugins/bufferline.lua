@@ -8,7 +8,6 @@ local M = {
 M.opts = {
 	options = {
 		show_close_icon = false,
-		mode = "tabs", -- set to "tabs" to only show tabpages instead
 		diagnostics = "nvim_lsp",
 		offsets = {
 			{
