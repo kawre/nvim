@@ -1,14 +1,3 @@
-local M = {
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { "vim" },
-			},
-			completion = {
-				callSnippet = "Replace",
-			},
-		},
-	},
-}
+local M = {}
 
 return M

@@ -1,2 +1,0 @@
-globals = { "vim" }
-std = "luajit"

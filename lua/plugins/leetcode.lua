@@ -1,5 +1,5 @@
 local M = {
-	"~/projects/leetcode.nvim/",
+	"kawre/leetcode.nvim",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope.nvim",

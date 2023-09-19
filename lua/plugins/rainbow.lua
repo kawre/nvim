@@ -1,6 +1,6 @@
 local M = {
-	"HiPhish/rainbow-delimiters.nvim",
-	enabled = false,
+  "HiPhish/rainbow-delimiters.nvim",
+  enabled = true,
 }
 
 -- M.opts = {}

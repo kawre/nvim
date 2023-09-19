@@ -1,10 +1,9 @@
 local M = {
-  filetypes = { "lua" },
+	filetypes = { "lua" },
 }
 
 M.config = {
-  require("efmls-configs.formatters.stylua"),
-  -- require("efmls-configs.linters.luacheck"),
+	require("efmls-configs.formatters.stylua"),
 }
 
 return M
