@@ -1,6 +1,6 @@
 local M = {
-	"lukas-reineke/indent-blankline.nvim",
-	enabled = false,
+  "lukas-reineke/indent-blankline.nvim",
+  enabled = false,
 }
 
 -- M.init = function()
@@ -8,13 +8,13 @@ local M = {
 -- end
 
 M.opts = {
-	-- show_current_context = true,
-	-- context_char = "▎",
-	char = "▎",
-	-- show_current_context_start = true,
-	-- strict_tabs = true,
-	-- max_indent_increase = 1,
-	-- context_highlight_list = { "IndentBlanklineIndent1" },
+  show_current_context = true,
+  context_char = "▎",
+  -- char = "▎",
+  -- show_current_context_start = true,
+  -- strict_tabs = true,
+  max_indent_increase = 1,
+  -- context_highlight_list = { "IndentBlanklineIndent1" },
 }
 
 return M
