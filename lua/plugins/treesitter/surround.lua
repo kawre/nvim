@@ -1,6 +1,6 @@
 local M = {
-	"kylechui/nvim-surround",
-	event = "VeryLazy",
+    "kylechui/nvim-surround",
+    event = "VeryLazy",
 }
 
 M.opts = {}

@@ -17,7 +17,9 @@
       "Lua.completion.callSnippet": "Replace",
       "Lua.diagnostics.globals": [
         "vim"
-      ]
+      ],
+      "Lua.runtime.version": "LuaJIT",
+      "Lua.format.enable": false
     }
   }
 }
