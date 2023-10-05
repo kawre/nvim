@@ -1,7 +1,8 @@
 local M = {
     "windwp/nvim-autopairs",
     -- event = "InsertEnter",
-    enabled = true,
+    lazy = false,
+    enabled = false,
 }
 
 M.opts = {
@@ -17,6 +18,7 @@ M.opts = {
     -- 	highlight = "PmenuSel",
     -- 	highlight_grey = "LineNr",
     -- },
+    check_ts = true,
 }
 
 return M

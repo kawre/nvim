@@ -25,19 +25,75 @@ M.config = function()
     local luasnip = require("luasnip")
     local user = require("config.user")
 
-    cmp.setup({
+    cmp.setup({ ---@diagnostic disable-line
         snippet = {
             expand = function(args) luasnip.lsp_expand(args.body) end,
         },
+        performance = { ---@diagnostic disable-line
+            -- max_view_entries = 30,
+            -- throttle = 500,
+            -- fetching_timeout = 500,
+        },
         preselect = cmp.PreselectMode.None,
+        completion = {
+            completeopt = "menu,menuone,noinsert",
+        },
         mapping = cmp.mapping.preset.insert({
             ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
             ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
             ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
             ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-            ["<C-c>"] = cmp.mapping.complete(),
             ["<C-e>"] = cmp.mapping.abort(),
-            ["<CR>"] = cmp.mapping.confirm({ select = true }),
+
+            ["<C-c>"] = cmp.mapping.complete(),
+            ["<C-Space>"] = cmp.mapping.complete(),
+
+            ["<C-g>"] = function(fallback)
+                if cmp.core.view:visible() then
+                    if cmp.visible_docs() then
+                        cmp.close_docs()
+                    else
+                        cmp.open_docs()
+                    end
+                else
+                    fallback()
+                end
+            end,
+
+            ["<CR>"] = function(fallback)
+                if cmp.core.view:visible() then
+                    cmp.confirm()
+                else
+                    fallback()
+                end
+            end,
+
+            -- ["<cr>"] = cmp.mapping(function(fallback)
+            -- end, { "i"}),
+            -- ["<CR>"] = cmp.mapping(function(fallback)
+            --     -- local xd = cmp.core.view:get_first_entry()
+            --     -- cmp.core.vim.notify(vim.inspect(xd))
+            --     if cmp.core.view:visible() then
+            --         cmp.confirm({ select = true })
+            --     else
+            --         fallback()
+            --     end
+            --
+            -- end, { "i" }),
+            -- ["<CR>"] = cmp.mapping({
+            --     i = function(fallback)
+            --         if cmp.visible() then
+            --             if cmp.get_active_entry() then
+            --                 cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+            --             end
+            --         else
+            --             fallback()
+            --         end
+            --     end,
+            --     s = cmp.mapping.confirm({ select = false }),
+            --     c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false }),
+            -- }),
+
             -- ["<Tab>"] = function()
             -- 	if cmp.visible() then
             -- 		cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select })
@@ -75,7 +131,10 @@ M.config = function()
             )
         end,
         view = {
-            entries = { name = "custom", selection_order = "near_cursor" },
+            docs = {
+                auto_open = false,
+            },
+            -- entries = { name = "custom", selection_order = "near_cursor" },
         },
         sources = cmp.config.sources({
             { name = "nvim_lsp" },
@@ -90,7 +149,6 @@ M.config = function()
         sorting = {
             priority_weight = 2,
             comparators = {
-                -- deprioritize_snippet,
                 cmp.config.compare.exact,
                 cmp.config.compare.offset,
                 cmp.config.compare.score,
@@ -129,11 +187,8 @@ M.config = function()
         }),
     })
 
-    local ok, npairs_cmp = pcall(require, "nvim-autopairs.completion.cmp")
-    if ok then
-        print("lol")
-        cmp.event:on("confirm_done", npairs_cmp.on_confirm_done())
-    end
+    local ok, cmp_npairs = pcall(require, "nvim-autopairs.completion.cmp")
+    if ok then cmp.event:on("confirm_done", cmp_npairs.on_confirm_done()) end
 end
 
 return M

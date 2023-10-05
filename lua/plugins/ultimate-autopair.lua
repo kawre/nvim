@@ -1,7 +1,7 @@
 local M = {
     "altermo/ultimate-autopair.nvim",
     event = { "InsertEnter", "CmdlineEnter" },
-    enabled = false,
+    enabled = true,
 }
 
 M.opts = {
