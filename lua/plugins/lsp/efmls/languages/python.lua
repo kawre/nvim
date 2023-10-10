@@ -3,6 +3,7 @@ local M = {
 }
 
 M.config = {
+    require("efmls-configs.linters.flake8"),
     require("efmls-configs.formatters.black"),
 }
 
