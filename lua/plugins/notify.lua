@@ -3,8 +3,8 @@ local M = {
 }
 
 M.opts = {
-    render = "wrapped-compact",
-    max_width = 75,
+    -- render = "wrapped-compact",
+    -- max_width = 75,
 }
 
 return M

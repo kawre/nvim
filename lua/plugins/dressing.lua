@@ -1,5 +1,5 @@
 local M = {
-  "stevearc/dressing.nvim",
+    "stevearc/dressing.nvim",
 }
 
 M.opts = {}
