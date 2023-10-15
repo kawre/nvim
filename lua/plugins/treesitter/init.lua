@@ -5,8 +5,9 @@ local M = {
     event = { "BufReadPost", "BufNewFile" },
     cmd = { "TSUpdateSync" },
     dependencies = {
+        require("plugins.treesitter.autotag"),
         require("plugins.treesitter.surround"),
-        require("plugins.treesitter.autopairs"),
+        -- require("plugins.treesitter.autopairs"),
     },
 }
 
@@ -18,6 +19,9 @@ M.opts = {
         enable = true,
         additional_vim_regex_highlighting = false,
     },
+    indent = { enable = true },
 }
+
+M.config = function(_, opts) require("nvim-treesitter.configs").setup(opts) end
 
 return M
