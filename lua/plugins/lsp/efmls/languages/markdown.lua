@@ -3,7 +3,8 @@ local M = {
 }
 
 M.config = {
-    require("efmls-configs.formatters.prettier_d"),
+    -- require("efmls-configs.formatters.cbfmt"),
+    require("efmls-configs.formatters.mdformat"),
     require("efmls-configs.linters.markdownlint"),
 }
 

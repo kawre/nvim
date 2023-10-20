@@ -1,14 +1,13 @@
 local user = require("config.user")
 
 local M = {
-    "~/projects/barbecue.nvim",
-    name = "barbecue",
+    "utilyre/barbecue.nvim",
     version = "*",
     dependencies = {
         "SmiteshP/nvim-navic",
         "nvim-tree/nvim-web-devicons", -- optional dependency
     },
-    dev = true,
+    -- dev = true,
     -- enabled = false,
 }
 

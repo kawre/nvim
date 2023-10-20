@@ -2,7 +2,7 @@ local M = {
     "nvim-treesitter/nvim-treesitter",
     version = false,
     build = ":TSUpdate",
-    event = { "BufReadPost", "BufNewFile" },
+    event = { "BufReadPost", "BufNewFile", "CmdLineEnter" },
     cmd = { "TSUpdateSync" },
     dependencies = {
         require("plugins.treesitter.autotag"),
@@ -15,10 +15,7 @@ M.opts = {
     ensure_installed = "all",
     sync_install = false,
     auto_install = true,
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-    },
+    highlight = { enable = true },
     indent = { enable = true },
 }
 

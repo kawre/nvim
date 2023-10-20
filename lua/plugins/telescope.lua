@@ -4,17 +4,16 @@ local M = {
         "nvim-telescope/telescope-project.nvim",
         "nvim-lua/plenary.nvim",
     },
-    lazy = false,
 }
 
 M.keys = {
     { "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find File" },
-    { "<leader>ft", "<cmd>Telescope live_grep<CR>",  desc = "Find Text" },
-    { "<leader>fb", "<cmd>Telescope buffers<CR>",    desc = "Find Buffer" },
-    { "<leader>fk", "<cmd>Telescope keymaps<CR>",    desc = "Find Keymap" },
-    { "<leader>fp", "<cmd>Telescope project<CR>",    desc = "Find Project" },
-    { "<leader>fh", "<cmd>Telescope help_tags<CR>",  desc = "Find Tags" },
-    { "<leader>fn", "<cmd>Telescope notify<CR>",     desc = "Find Notifications" },
+    { "<leader>ft", "<cmd>Telescope live_grep<CR>", desc = "Find Text" },
+    { "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Find Buffer" },
+    { "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find Keymap" },
+    { "<leader>fp", "<cmd>Telescope project<CR>", desc = "Find Project" },
+    { "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Find Tags" },
+    { "<leader>fn", "<cmd>Telescope notify<CR>", desc = "Find Notifications" },
 }
 
 M.config = function()

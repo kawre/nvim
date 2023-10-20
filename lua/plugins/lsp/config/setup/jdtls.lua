@@ -82,11 +82,6 @@ M.setup = function()
                 },
                 format = {
                     enabled = true,
-                    settings = {
-                        -- url = "~/.config/jdtls/intellij-java-google-style.xml",
-                        -- url = "~/.config/jdtls/Default.xml",
-                        -- profile = "Default",
-                    },
                 },
             },
         },

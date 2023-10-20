@@ -10,6 +10,7 @@ local M = {
         "L3MON4D3/LuaSnip",
     },
     version = false,
+    event = { "InsertEnter", "CmdLineEnter" },
 }
 
 local function truncateString(str, maxLen)

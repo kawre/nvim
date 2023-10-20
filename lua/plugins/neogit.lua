@@ -6,6 +6,7 @@ local M = {
         "sindrets/diffview.nvim", -- optional
     },
     enabled = true,
+    cmd = "Neogit",
 }
 
 M.config = true

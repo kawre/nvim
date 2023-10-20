@@ -3,7 +3,7 @@ local opt = vim.opt
 opt.backup = false -- creates a backup file
 opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
-opt.conceallevel = 3 -- so that `` is visible in markdown files
+opt.conceallevel = 0 -- so that `` is visible in markdown files
 opt.fileencoding = "utf-8" -- the encoding written to a file
 opt.hlsearch = true -- highlight all matches on previous search pattern
 opt.ignorecase = true -- ignore case in search patterns
@@ -39,16 +39,16 @@ opt.iskeyword:append("-") -- treats words with `-` as single words
 opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequence of letters which describes how automatic formatting is to be done
 opt.linebreak = true
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
-opt.spelllang = { "en", "pl" }
-opt.fillchars = {
-    eob = " ",
-    foldopen = "",
-    foldclose = "",
-    -- fold = "⸱",
-    fold = " ",
-    foldsep = " ",
-    diff = "╱",
-}
+opt.spelllang = { "en" }
+-- opt.fillchars = {
+--     eob = " ",
+--     foldopen = "",
+--     foldclose = "",
+--     -- fold = "⸱",
+--     fold = " ",
+--     foldsep = " ",
+--     diff = "╱",
+-- }
 
 vim.g.loaded_perl_provider = 0
--- vim.g.markdown_recommended_style = 0
+vim.g.markdown_recommended_style = 0
