@@ -1,5 +1,6 @@
 local M = {
     "petertriho/nvim-scrollbar",
+    event = "VeryLazy",
 }
 
 M.opts = {

@@ -1,6 +1,7 @@
 local api = vim.api
 
--- vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 -- format on save
 api.nvim_create_autocmd("BufWritePre", {

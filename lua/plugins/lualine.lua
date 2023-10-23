@@ -2,11 +2,12 @@ local user = require("config.user")
 
 local M = {
     "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
     dependencies = {
         "folke/noice.nvim",
         "nvim-tree/nvim-web-devicons",
     },
+
+    event = "VeryLazy",
 }
 
 -- M.opts = {

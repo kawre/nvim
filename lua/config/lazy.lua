@@ -15,17 +15,16 @@ require("lazy").setup({
     spec = "plugins",
     change_detection = {
         -- automatically check for config file changes and reload the ui
-        enabled = true,
-        notify = true, -- get a notification when changes are found
+        enabled = false,
+        notify = false, -- get a notification when changes are found
     },
     dev = {
         path = "~/projects",
     },
+    defaults = {
+        lazy = true,
+    },
     checker = {
-        -- automatically check for plugin updates
-        enabled = true,
-        concurrency = nil, ---@type number? set to 1 to check for updates very slowly
-        notify = true, -- get a notification when new updates are found
-        frequency = 3600 * 24, -- check for updates every hour
+        enabled = false,
     },
 })

@@ -1,10 +1,11 @@
 local M = {
     "folke/noice.nvim",
-    event = "VeryLazy",
     dependencies = {
         "MunifTanjim/nui.nvim",
         "rcarriga/nvim-notify",
     },
+    priority = 1000,
+    lazy = false,
 }
 
 M.opts = {

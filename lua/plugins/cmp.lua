@@ -36,8 +36,11 @@ M.config = function()
             -- fetching_timeout = 500,
         },
         preselect = cmp.PreselectMode.None,
-        completion = {
+        completion = { ---@diagnostic disable-line
             completeopt = "menu,menuone,noinsert",
+        },
+        experimental = {
+            ghost_text = true,
         },
         mapping = cmp.mapping.preset.insert({
             ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),

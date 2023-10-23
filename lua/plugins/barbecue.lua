@@ -7,8 +7,7 @@ local M = {
         "SmiteshP/nvim-navic",
         "nvim-tree/nvim-web-devicons", -- optional dependency
     },
-    -- dev = true,
-    -- enabled = false,
+    event = "VeryLazy",
 }
 
 M.opts = {

@@ -7,7 +7,7 @@ local M = {
     dependencies = {
         require("plugins.treesitter.autotag"),
         require("plugins.treesitter.surround"),
-        -- require("plugins.treesitter.autopairs"),
+        require("plugins.treesitter.autopairs"),
     },
 }
 

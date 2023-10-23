@@ -3,7 +3,7 @@ local leet_arg = "leetcode.nvim"
 local M = {
     "kawre/leetcode.nvim",
     build = ":TSUpdate html",
-    dependencies = { "nvim-treesitter", "telescope.nvim", "nui.nvim", "noice.nvim" },
+    -- dependencies = { "nvim-treesitter", "telescope.nvim", "nui.nvim", "noice.nvim" },
     lazy = leet_arg ~= vim.fn.argv()[1],
     dev = true,
 }
@@ -20,21 +20,16 @@ M.opts = {
     },
 }
 
-M.config = function(_, opts)
-    local k_opts = {}
+M.keys = {
+    { "<leader>lq", mode = { "n" }, "<cmd>Leet tabs<cr>" },
+    { "<leader>lm", mode = { "n" }, "<cmd>Leet menu<cr>" },
+    { "<leader>lc", mode = { "n" }, "<cmd>Leet console<cr>" },
+    { "<leader>lh", mode = { "n" }, "<cmd>Leet hints<cr>" },
+    { "<leader>ll", mode = { "n" }, "<cmd>Leet lang<cr>" },
+    { "<leader>ld", mode = { "n" }, "<cmd>Leet desc toggle<cr>" },
 
-    vim.keymap.set("n", "<leader>lp", "<cmd>LcList<cr>", k_opts)
-    vim.keymap.set("n", "<leader>lq", "<cmd>LcTabs<cr>", k_opts)
-    vim.keymap.set("n", "<leader>lm", "<cmd>LcMenu<cr>", k_opts)
-    vim.keymap.set("n", "<leader>lc", "<cmd>LcConsole<cr>", k_opts)
-    vim.keymap.set("n", "<leader>lh", "<cmd>LcHints<cr>", k_opts)
-    vim.keymap.set("n", "<leader>ll", "<cmd>LcLanguage<cr>", k_opts)
-    vim.keymap.set("n", "<leader>ld", "<cmd>LcDescriptionToggle<cr>", k_opts)
-
-    vim.keymap.set("n", "<leader>lr", "<cmd>LcRun<cr>", k_opts)
-    vim.keymap.set("n", "<leader>ls", "<cmd>LcSubmit<cr>", k_opts)
-
-    require("leetcode").setup(opts)
-end
+    { "<leader>lr", mode = { "n" }, "<cmd>Leet run<cr>" },
+    { "<leader>ls", mode = { "n" }, "<cmd>Leet submit<cr>" },
+}
 
 return M

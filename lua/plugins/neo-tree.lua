@@ -5,8 +5,7 @@ local M = {
         "nvim-tree/nvim-web-devicons",
         "MunifTanjim/nui.nvim",
     },
-    event = "VeryLazy",
-    cmd = "Neotree",
+    lazy = false,
 }
 
 M.keys = {

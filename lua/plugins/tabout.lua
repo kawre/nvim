@@ -1,11 +1,7 @@
 local M = {
-	"kawre/nvim-tabout",
-	dev = true,
-  enabled = false,
+    "abecodes/tabout.nvim",
 }
 
-M.opts = {
-	tabkey = "",
-}
+M.opts = {}
 
 return M

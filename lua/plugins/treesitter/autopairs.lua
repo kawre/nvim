@@ -1,8 +1,8 @@
 local M = {
     "windwp/nvim-autopairs",
-    -- event = "InsertEnter",
-    lazy = false,
-    enabled = false,
+    event = { "InsertEnter", "CmdlineEnter" },
+    -- lazy = false,
+    -- enabled = false,
 }
 
 M.opts = {
