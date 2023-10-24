@@ -2,6 +2,8 @@ local M = {
     "abecodes/tabout.nvim",
 }
 
-M.opts = {}
+M.opts = {
+    tabkey = "",
+}
 
 return M
