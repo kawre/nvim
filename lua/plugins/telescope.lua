@@ -5,6 +5,7 @@ local M = {
         "nvim-telescope/telescope-project.nvim",
         "nvim-lua/plenary.nvim",
     },
+    event = "VeryLazy",
 }
 
 M.keys = {

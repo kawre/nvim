@@ -64,12 +64,13 @@ M.opts = {
         -- },
     },
     filesystem = {
+        use_libuv_file_watcher = true,
         group_empty_dirs = true,
         follow_current_file = { enabled = true, leave_dirs_open = true },
         filtered_items = {
             visible = false, -- when true, they will just be displayed differently than normal items
             hide_dotfiles = true,
-            hide_gitignored = true,
+            hide_gitignored = false,
             hide_hidden = true, -- only works on Windows for hidden files/directories
             hide_by_name = {
                 "node_modules",

@@ -10,7 +10,9 @@ local M = {
 M.keys = {
     {
         "<Tab>",
-        function() return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<Tab>" end,
+        function()
+            return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<Plug>(Tabout)"
+        end,
         expr = true,
         silent = true,
         mode = "i",
@@ -32,6 +34,7 @@ M.config = function(_, opts)
 
     vim.api.nvim_create_autocmd("ModeChanged", {
         group = unlink_group,
+        -- when going from select mode to normal and when leaving insert mode
         pattern = { "s:n", "i:*" },
         callback = function(event)
             if

@@ -1,3 +1,9 @@
+package.path = package.path
+    .. ";"
+    .. vim.fn.expand("$HOME")
+    .. "/.luarocks/share/lua/5.1/?/init.lua;"
+package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"
+
 local opt = vim.opt
 
 opt.backup = false -- creates a backup file
