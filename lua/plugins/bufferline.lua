@@ -3,21 +3,22 @@ local M = {
     version = "*",
     dependencies = "nvim-tree/nvim-web-devicons",
     enabled = false,
+    lazy = false,
 }
 
 M.opts = {
-    options = {
-        show_close_icon = false,
-        diagnostics = "nvim_lsp",
-        offsets = {
-            {
-                filetype = "neo-tree",
-                text = "Neo-tree",
-                highlight = "Directory",
-                text_align = "center",
-            },
-        },
-    },
+    -- options = {
+    --     show_close_icon = false,
+    --     diagnostics = "nvim_lsp",
+    --     offsets = {
+    --         {
+    --             filetype = "neo-tree",
+    --             text = "Neo-tree",
+    --             highlight = "Directory",
+    --             text_align = "center",
+    --         },
+    --     },
+    -- },
 }
 
 return M

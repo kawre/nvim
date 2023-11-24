@@ -10,13 +10,13 @@ local M = {
 
 ---@type lc.UserConfig
 M.opts = {
-    domain = "com",
     arg = leet_arg,
     lang = "java",
-    sql = "oraclesql",
     debug = true,
 
-    image_support = true,
+    cn = {
+        enabled = false,
+    },
 }
 
 M.keys = {
@@ -26,7 +26,6 @@ M.keys = {
     { "<leader>lh", mode = { "n" }, "<cmd>Leet info<cr>" },
     { "<leader>ll", mode = { "n" }, "<cmd>Leet lang<cr>" },
     { "<leader>ld", mode = { "n" }, "<cmd>Leet desc<cr>" },
-
     { "<leader>lr", mode = { "n" }, "<cmd>Leet run<cr>" },
     { "<leader>ls", mode = { "n" }, "<cmd>Leet submit<cr>" },
 }
