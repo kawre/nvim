@@ -7,6 +7,11 @@ local M = {
     },
 }
 
-M.config = true
+M.opts = {
+    lsp = {
+        on_attach = require("plugins.lsp.handlers").on_attach,
+        capabilities = require("plugins.lsp.handlers").capabilities,
+    },
+}
 
 return M

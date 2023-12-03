@@ -15,8 +15,13 @@ M.opts = {
     ensure_installed = "all",
     sync_install = false,
     auto_install = true,
-    highlight = { enable = true },
-    indent = { enable = true },
+    highlight = {
+        enable = true,
+    },
+    indent = {
+        disable = { "python", "dart" },
+        enable = true,
+    },
 }
 
 M.config = function(_, opts) require("nvim-treesitter.configs").setup(opts) end
