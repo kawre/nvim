@@ -7,6 +7,10 @@ local M = {
 }
 
 M.opts = {
+    registries = {
+        "github:nvim-java/mason-registry",
+        "github:mason-org/mason-registry",
+    },
     ui = {
         border = "none",
         icons = {

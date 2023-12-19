@@ -14,8 +14,12 @@ M.opts = {
     lang = "java",
     debug = true,
 
+    image_support = false,
+
+    cache = { update_interval = 60 * 60 },
+
     cn = {
-        enabled = false,
+        enabled = true,
     },
 }
 

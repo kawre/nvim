@@ -1,6 +1,6 @@
 local M = {
     "numToStr/Comment.nvim",
-    lazy = false,
+    event = "VeryLazy",
 }
 
 M.opts = {

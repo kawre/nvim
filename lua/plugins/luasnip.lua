@@ -5,6 +5,7 @@ local M = {
         "friendly-snippets",
         "tabout.nvim",
     },
+    event = "VeryLazy",
 }
 
 M.keys = {

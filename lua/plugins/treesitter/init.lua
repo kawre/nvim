@@ -19,8 +19,8 @@ M.opts = {
         enable = true,
     },
     indent = {
-        disable = { "python", "dart" },
-        enable = true,
+        disable = { "python", "dart", "cpp" },
+        enable = false,
     },
 }
 

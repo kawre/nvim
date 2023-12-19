@@ -1,8 +1,6 @@
 local M = {
     "windwp/nvim-autopairs",
     event = { "InsertEnter", "CmdlineEnter" },
-    -- lazy = false,
-    -- enabled = false,
 }
 
 M.opts = {
@@ -20,5 +18,14 @@ M.opts = {
     -- },
     check_ts = true,
 }
+
+M.config = function(_, opts)
+    local Rule = require("nvim-autopairs.rule")
+    local npairs = require("nvim-autopairs")
+
+    -- npairs.add_rule(Rule("<", ">", "java"))
+
+    npairs.setup(opts)
+end
 
 return M
