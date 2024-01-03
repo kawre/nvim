@@ -3,11 +3,8 @@ local user = require("config.user")
 local M = {
     "utilyre/barbecue.nvim",
     version = "*",
-    dependencies = {
-        "SmiteshP/nvim-navic",
-        "nvim-tree/nvim-web-devicons", -- optional dependency
-    },
     event = "VeryLazy",
+    enabled = false,
 }
 
 M.opts = {

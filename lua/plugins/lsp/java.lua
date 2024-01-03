@@ -11,7 +11,6 @@ local M = {
         "williamboman/mason.nvim",
     },
     ft = "java",
-    enabled = false,
 }
 
 M.opts = {}

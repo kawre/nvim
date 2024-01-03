@@ -98,6 +98,7 @@ M.config = function()
             -- entries = { name = "custom", selection_order = "near_cursor" },
         },
         sources = cmp.config.sources({
+            { name = "copilot" },
             { name = "nvim_lsp" },
             { name = "luasnip" },
         }, {

@@ -4,11 +4,6 @@ local M = {
     build = ":TSUpdate",
     event = { "BufReadPost", "BufNewFile", "CmdLineEnter" },
     cmd = { "TSUpdateSync" },
-    dependencies = {
-        require("plugins.treesitter.autotag"),
-        require("plugins.treesitter.surround"),
-        require("plugins.treesitter.autopairs"),
-    },
 }
 
 M.opts = {

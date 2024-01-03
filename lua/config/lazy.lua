@@ -12,11 +12,19 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = "plugins",
+    spec = {
+        { import = "plugins.colorscheme" },
+        { import = "plugins" },
+        { import = "plugins.lsp" },
+        { import = "plugins.extras" },
+    },
     change_detection = {
         -- automatically check for config file changes and reload the ui
         enabled = false,
         notify = false, -- get a notification when changes are found
+    },
+    install = {
+        colorscheme = { "catppucin", "default" },
     },
     dev = {
         path = "~/projects",

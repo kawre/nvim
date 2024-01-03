@@ -3,7 +3,6 @@ local M = {
     name = "catppuccin",
     priority = 1000,
     lazy = false,
-    enabled = true,
 }
 
 M.init = function() vim.cmd.colorscheme("catppuccin") end

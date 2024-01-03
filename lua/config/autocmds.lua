@@ -6,8 +6,7 @@ vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 -- format on save
 api.nvim_create_autocmd("BufWritePre", {
     pattern = "*",
-    -- command = "silent lua vim.lsp.buf.format()",
-    callback = require("plugins.lsp.format").format,
+    command = "silent lua vim.lsp.buf.format()",
 })
 
 -- local lsp_fmt_group = vim.api.nvim_create_augroup("LspFormattingGroup", {})
