@@ -22,9 +22,11 @@ local function truncateString(str, maxLen)
 end
 
 M.config = function()
+    local user = require("config.user")
+
     local cmp = require("cmp")
     local luasnip = require("luasnip")
-    local user = require("config.user")
+    local neotab = require("neotab")
 
     cmp.setup({ ---@diagnostic disable-line
         snippet = {
@@ -66,6 +68,15 @@ M.config = function()
                     fallback()
                 end
             end,
+            -- ["<Tab>"] = cmp.mapping(function()
+            --     if cmp.visible() then
+            --         cmp.select_next_item()
+            --     elseif luasnip.jumpable(1) then
+            --         luasnip.jump(1)
+            --     else
+            --         neotab.tabout()
+            --     end
+            -- end),
         }),
         formatting = {
             expandable_indicator = false,

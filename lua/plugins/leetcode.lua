@@ -14,13 +14,24 @@ M.opts = {
     lang = "java",
     debug = true,
 
-    image_support = false,
+    directory = "/home/kawre/projects/leetcode",
+
+    injector = {
+        ["cpp"] = {
+            before = { "#include <bits/stdc++.h>", "using namespace std;" },
+        },
+        ["java"] = {
+            before = { "import java.util.*;" },
+        },
+    },
 
     cache = { update_interval = 60 * 60 },
 
     cn = {
-        enabled = true,
+        enabled = false,
     },
+
+    image_support = false,
 }
 
 M.keys = {

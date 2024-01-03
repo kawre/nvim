@@ -5,6 +5,8 @@ local M = {
         "folke/neodev.nvim",
         "folke/neoconf.nvim",
     },
+    event = { "BufReadPost", "BufNewFile" },
+    cmd = { "LspInfo", "LspInstall", "LspUninstall" },
 }
 
 M.config = function()
@@ -13,16 +15,15 @@ M.config = function()
     local utils = require("config.utils")
     local lspconfig = require("lspconfig")
 
-    local t = utils.get_available_lsps()
-    for _, lsp in ipairs(t) do
-        local opts = {
-            on_attach = require("plugins.lsp.handlers").on_attach,
-            capabilities = require("plugins.lsp.handlers").capabilities,
-        }
+    local opts = {
+        on_attach = require("plugins.lsp.handlers").on_attach,
+        capabilities = require("plugins.lsp.handlers").capabilities,
+    }
 
-        local setup = require("plugins.lsp.config.setup." .. lsp) or {}
+    for _, lsp in ipairs(utils.get_available_lsps()) do
+        local setup = require("plugins.lsp.config.setup." .. lsp)
 
-        if setup.enabled == nil or setup.enabled == true then
+        if setup and (setup.enabled == nil or setup.enabled == true) then
             lspconfig[lsp].setup(vim.tbl_deep_extend("force", opts, setup))
         end
     end

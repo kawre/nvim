@@ -6,8 +6,7 @@ local M = {
         "folke/noice.nvim",
         "nvim-tree/nvim-web-devicons",
     },
-
-    event = "VeryLazy",
+    lazy = false,
 }
 
 -- M.opts = {

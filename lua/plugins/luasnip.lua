@@ -3,7 +3,7 @@ local M = {
     build = "make install_jsregexp",
     dependencies = {
         "friendly-snippets",
-        "tabout.nvim",
+        "neotab.nvim",
     },
     event = "VeryLazy",
 }
@@ -12,7 +12,9 @@ M.keys = {
     {
         "<Tab>",
         function()
-            return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<Plug>(Tabout)"
+            return require("luasnip").jumpable(1) --
+                    and "<Plug>luasnip-jump-next"
+                or "<Plug>(neotab-out)"
         end,
         expr = true,
         silent = true,
