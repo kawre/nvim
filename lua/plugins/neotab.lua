@@ -1,8 +1,8 @@
 local M = {
     "kawre/neotab.nvim",
-    dev = true,
     event = "InsertEnter",
     enabled = true,
+    dev = true,
 }
 
 ---@type ntab.user.config
@@ -31,12 +31,12 @@ M.opts = {
 
         escape = {
             enabled = true,
+
             triggers = {
                 ["+"] = {
                     pairs = {
                         { open = '"', close = '"' },
                     },
-                    space = { before = true, after = true },
                     format = " %s ",
                     ft = { "java" },
                 },

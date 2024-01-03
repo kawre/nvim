@@ -61,11 +61,9 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-    -- local disable_formatting = { "tsserver" }
-
-    -- if vim.tbl_contains(disable_formatting, client.name) then
-    --     client.server_capabilities.documentFormattingProvider = false
-    -- end
+    if client.supports_method("textDocument/inlayHint") then
+        vim.lsp.inlay_hint.enable(bufnr, true)
+    end
 
     lsp_keymaps(bufnr)
 end
