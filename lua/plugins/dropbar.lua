@@ -9,6 +9,33 @@ local M = {
 }
 
 M.opts = {
+    general = {
+        update_events = {
+            win = {
+                "CursorMoved",
+                -- "CursorMovedI",
+                "WinEnter",
+                "WinResized",
+            },
+            buf = {
+                "BufModifiedSet",
+                "FileChangedShellPost",
+                "TextChanged",
+                -- "TextChangedI",
+                -- "InsertLeave",
+            },
+        },
+    },
+    sources = {
+        path = {
+            modified = function(sym)
+                return sym:merge({
+                    icon = user.symbols.modified .. " ",
+                    icon_hl = "Constant",
+                })
+            end,
+        },
+    },
     icons = {
         kinds = {
             symbols = vim.tbl_map(function(icon) --

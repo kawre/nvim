@@ -5,15 +5,23 @@ local M = {
 
 function M.config()
     local null_ls = require("null-ls")
+    -- local u = require("config.utils")
+
+    -- u.get_efm_languages()
 
     local formatting = null_ls.builtins.formatting
 
     null_ls.setup({
         debug = true,
         sources = {
+            -- lua
             formatting.stylua,
-            formatting.prettier,
+
+            -- python
+            null_ls.builtins.diagnostics.flake8,
             formatting.black,
+
+            formatting.prettier,
             formatting.fish_indent,
             formatting.djlint,
             formatting.shfmt,
@@ -25,7 +33,6 @@ function M.config()
             -- null_ls.builtins.diagnostics.eslint,
             null_ls.builtins.diagnostics.fish,
             null_ls.builtins.diagnostics.markdownlint,
-            null_ls.builtins.diagnostics.flake8,
             null_ls.builtins.completion.spell,
         },
     })

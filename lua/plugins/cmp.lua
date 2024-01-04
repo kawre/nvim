@@ -37,7 +37,7 @@ M.config = function()
             completeopt = "menu,menuone,noinsert",
         },
         experimental = {
-            ghost_text = false,
+            ghost_text = true,
         },
         mapping = cmp.mapping.preset.insert({
             ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),

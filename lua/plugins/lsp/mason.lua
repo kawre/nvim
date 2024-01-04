@@ -27,7 +27,7 @@ M.config = function(_, opts)
     require("mason").setup(opts)
 
     require("mason-lspconfig").setup({
-        ensure_installed = require("config.utils").get_available_lsps(),
+        -- ensure_installed = require("config.utils").get_available_lsps(),
         automatic_installation = true,
     })
 end

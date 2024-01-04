@@ -19,9 +19,9 @@ end
 function M.get_efm_languages()
     local languages = {}
 
-    local t = M.scandir("~/.config/nvim/lua/plugins/lsp/efmls/languages")
+    local t = M.scandir("~/.config/nvim/lua/plugins/lsp/none-ls/settings")
     for _, v in ipairs(t) do
-        local lang = require("plugins.lsp.efmls.languages." .. v)
+        local lang = require("plugins.lsp.none-ls.settings." .. v)
 
         for _, filetype in ipairs(lang.filetypes) do
             languages[filetype] = lang.config

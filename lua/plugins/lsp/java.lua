@@ -13,6 +13,16 @@ local M = {
     ft = "java",
 }
 
-M.opts = {}
+M.opts = {
+    java_test = {
+        enable = false,
+    },
+    java_debug_adapter = {
+        enable = false,
+    },
+    jdk = {
+        auto_install = true,
+    },
+}
 
 return M

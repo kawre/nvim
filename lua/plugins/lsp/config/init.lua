@@ -1,9 +1,8 @@
 local M = {
     "neovim/nvim-lspconfig",
     dependencies = {
-        "creativenull/efmls-configs-nvim",
-        "folke/neodev.nvim",
-        "folke/neoconf.nvim",
+        "neodev.nvim",
+        "neoconf.nvim",
         "nvim-navbuddy",
     },
     event = { "BufReadPost", "BufNewFile" },
@@ -22,10 +21,10 @@ M.config = function()
     }
 
     for _, lsp in ipairs(utils.get_available_lsps()) do
-        local setup = require("plugins.lsp.config.settings." .. lsp)
+        local setup = require("plugins.lsp.config.settings." .. lsp) or {}
 
-        if setup and (setup.enabled == nil or setup.enabled == true) then
-            lspconfig[lsp].setup(vim.tbl_deep_extend("force", opts, setup))
+        if setup.enabled == nil or setup.enabled == true then
+            lspconfig[setup.name or lsp].setup(vim.tbl_deep_extend("force", opts, setup))
         end
     end
 end

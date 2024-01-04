@@ -55,6 +55,13 @@ M.opts = {
                     format = " %s> ",
                     cond = "^$",
                 },
+                ["-"] = {
+                    pairs = {
+                        { open = "(", close = ")" },
+                    },
+                    ft = { "java" },
+                    format = " %s> ",
+                },
             },
         },
     },

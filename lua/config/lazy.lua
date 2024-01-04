@@ -12,12 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = {
-        { import = "plugins.colorscheme" },
-        { import = "plugins" },
-        { import = "plugins.lsp" },
-        { import = "plugins.extras" },
-    },
+    spec = LAZY_PLUGIN_SPEC,
     change_detection = {
         -- automatically check for config file changes and reload the ui
         enabled = false,

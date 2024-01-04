@@ -1,4 +1,11 @@
-require("config.autocmds")
-require("config.keymaps")
+require("config.launch")
 require("config.options")
+require("config.keymaps")
+require("config.autocmds")
+
+spec("plugins.colorscheme")
+spec("plugins")
+spec("plugins.lsp")
+spec("plugins.extras")
+
 require("config.lazy")

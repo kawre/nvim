@@ -33,7 +33,7 @@ M.opts = {
                 information = { "undercurl" },
             },
         },
-        navic = { enabled = true, custom_bg = "lualine" },
+        -- navic = { enabled = true, custom_bg = "lualine" },
         neotest = true,
         noice = true,
         notify = true,
@@ -42,7 +42,13 @@ M.opts = {
         telescope = true,
         treesitter = true,
         which_key = true,
+        dropbar = { enabled = true, color_mode = true },
     },
+    custom_highlights = function(colors)
+        return {
+            DropBarKindFile = { fg = colors.text },
+        }
+    end,
 }
 
 return M
