@@ -14,15 +14,15 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     spec = LAZY_PLUGIN_SPEC,
     change_detection = {
-        -- automatically check for config file changes and reload the ui
-        enabled = false,
-        notify = false, -- get a notification when changes are found
+        enabled = true,
+        notify = false,
     },
     install = {
-        colorscheme = { "catppucin", "default" },
+        colorscheme = { "catppuccin", "default" },
     },
     dev = {
         path = "~/projects",
+        fallback = true,
     },
     defaults = {
         lazy = true,

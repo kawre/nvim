@@ -5,6 +5,17 @@ local ncmp = require("cmp_nvim_lsp")
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = ncmp.default_capabilities(M.capabilities)
+M.capabilities.textDocument.completion.completionItem.resolveSupport = {
+    properties = {
+        "documentation",
+        "detail",
+        "additionalTextEdits",
+    },
+}
+M.capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true,
+}
 
 M.setup = function()
     local user = require("config.user")
@@ -17,14 +28,15 @@ M.setup = function()
     }
 
     for _, sign in ipairs(signs) do
-        vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+        vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
     end
 
     local config = {
-        virtual_text = false,
         signs = {
-            active = signs,
+            active = true,
+            values = signs,
         },
+        virtual_text = false,
         update_in_insert = false,
         underline = true,
         severity_sort = true,
