@@ -6,7 +6,6 @@ local M = {
         "MunifTanjim/nui.nvim",
     },
     lazy = false,
-    enabled = true,
 }
 
 M.keys = {

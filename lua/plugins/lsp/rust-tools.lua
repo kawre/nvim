@@ -1,14 +1,16 @@
 local M = {
-    "simrat39/rust-tools.nvim",
-    ft = "rust",
+    -- "simrat39/rust-tools.nvim",
+    -- ft = "rust",
 
-    -- "mrcjkb/rustaceanvim",
-    -- version = "^3", -- Recommended
-    -- ft = { "rust" },
+    "mrcjkb/rustaceanvim",
+    version = "^3", -- Recommended
+    ft = { "rust" },
 }
 
-M.opts = {
-    standalone = true,
-}
+M.config = function()
+    vim.g.rustaceanvim = {
+        standalone = true,
+    }
+end
 
 return M

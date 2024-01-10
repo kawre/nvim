@@ -12,7 +12,12 @@ M.keys = {
 }
 
 M.opts = {
-    lsp = { auto_attach = true },
+    lsp = {
+        auto_attach = true,
+    },
+    window = {
+        size = { height = "80%", width = "80%" },
+    },
 }
 
 return M

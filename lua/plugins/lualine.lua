@@ -5,6 +5,7 @@ local M = {
     dependencies = {
         "folke/noice.nvim",
         "nvim-tree/nvim-web-devicons",
+        "AndreM222/copilot-lualine",
     },
     lazy = false,
 }
@@ -166,6 +167,7 @@ M.opts = {
             },
         },
         lualine_x = {
+            { "copilot" },
             {
                 "filesize",
                 color = { fg = "#6c7087" },

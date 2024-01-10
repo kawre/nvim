@@ -11,10 +11,10 @@ local M = {
 ---@type lc.UserConfig
 M.opts = {
     arg = leet_arg,
-    lang = "java",
+    lang = "python3",
     debug = true,
 
-    directory = "/home/kawre/projects/leetcode",
+    directory = vim.fn.expand("~/projects/leetcode"),
 
     injector = {
         ["cpp"] = {
@@ -31,6 +31,12 @@ M.opts = {
         enabled = false,
     },
 
+    hooks = {
+        LeetEnter = {
+            function() vim.cmd("silent Copilot disable") end,
+        },
+    },
+
     image_support = false,
 }
 
@@ -43,6 +49,7 @@ M.keys = {
     { "<leader>ld", mode = { "n" }, "<cmd>Leet desc<cr>" },
     { "<leader>lr", mode = { "n" }, "<cmd>Leet run<cr>" },
     { "<leader>ls", mode = { "n" }, "<cmd>Leet submit<cr>" },
+    { "<leader>ly", mode = { "n" }, "<cmd>Leet yank<cr>" },
 }
 
 return M

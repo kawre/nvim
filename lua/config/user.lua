@@ -35,6 +35,7 @@ M.kinds = {
     Object = "󰅩",
     Key = "",
     Null = "∅",
+    Copilot = "",
 }
 
 M.signs = {

@@ -1,7 +1,7 @@
 local M = {
     "HiPhish/rainbow-delimiters.nvim",
-    event = "BufEnter",
-    enabled = true,
+    event = "VeryLazy",
+    dev = true,
 }
 
 M.config = function()
@@ -24,6 +24,9 @@ M.config = function()
             "RainbowDelimiterRed",
             "RainbowDelimiterYellow",
             "RainbowDelimiterBlue",
+        },
+        priority = {
+            java = 200,
         },
     }
 end

@@ -9,6 +9,11 @@ api.nvim_create_autocmd("BufWritePre", {
     command = "silent lua vim.lsp.buf.format()",
 })
 
+api.nvim_create_autocmd("TextChangedI", {
+    pattern = "*",
+    callback = function() vim.notify(vim.inspect(vim.diagnostic.config()), vim.log.levels.DEBUG) end,
+})
+
 -- local lsp_fmt_group = vim.api.nvim_create_augroup("LspFormattingGroup", {})
 -- vim.api.nvim_create_autocmd("BufWritePost", {
 --     group = lsp_fmt_group,

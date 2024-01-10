@@ -68,15 +68,6 @@ M.config = function()
                     fallback()
                 end
             end,
-            -- ["<Tab>"] = cmp.mapping(function()
-            --     if cmp.visible() then
-            --         cmp.select_next_item()
-            --     elseif luasnip.jumpable(1) then
-            --         luasnip.jump(1)
-            --     else
-            --         neotab.tabout()
-            --     end
-            -- end),
         }),
         formatting = {
             expandable_indicator = false,
@@ -98,7 +89,6 @@ M.config = function()
             -- entries = { name = "custom", selection_order = "near_cursor" },
         },
         sources = cmp.config.sources({
-            { name = "copilot" },
             { name = "nvim_lsp" },
             { name = "luasnip" },
         }, {

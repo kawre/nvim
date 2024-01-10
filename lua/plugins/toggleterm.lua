@@ -6,7 +6,7 @@ local M = {
 M.keys = {
     { "<C-t>", mode = { "n", "t" }, "<cmd>ToggleTerm<cr>" },
     { "<Esc>", mode = { "t" }, "<cmd>ToggleTerm<cr>" },
-    { "jk", mode = { "t" }, "<cmd>ToggleTerm<cr>" },
+    -- { "jk", mode = { "t" }, "<cmd>ToggleTerm<cr>" },
 }
 
 M.opts = {

@@ -3,7 +3,7 @@ local M = {
     cmd = "Copilot",
     event = "InsertEnter",
     dependencies = {
-        "zbirenbaum/copilot-cmp",
+        -- "zbirenbaum/copilot-cmp",
     },
 }
 
