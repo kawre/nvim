@@ -6,7 +6,7 @@ vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 -- format on save
 api.nvim_create_autocmd("BufWritePre", {
     pattern = "*",
-    command = "silent lua vim.lsp.buf.format()",
+    command = "lua vim.lsp.buf.format()",
 })
 
 api.nvim_create_autocmd("TextChangedI", {

@@ -35,6 +35,7 @@ M.config = function()
         ),
         dashboard.button("r", " " .. " Recent files", "<cmd>Telescope oldfiles <CR>"),
         dashboard.button("t", "󰺯 " .. " Find text", "<cmd>Telescope live_grep <CR>"),
+        dashboard.button("l", " " .. " leetcode.nvim", "<cmd>Leet<CR>"),
         dashboard.button(
             "c",
             " " .. " Config",

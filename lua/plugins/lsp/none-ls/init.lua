@@ -5,11 +5,10 @@ local M = {
 
 function M.config()
     local null_ls = require("null-ls")
-    -- local u = require("config.utils")
-
-    -- u.get_efm_languages()
 
     local formatting = null_ls.builtins.formatting
+    local diagnostics = null_ls.builtins.diagnostics
+    local completion = null_ls.builtins.completion
 
     null_ls.setup({
         debug = true,
@@ -18,22 +17,16 @@ function M.config()
             formatting.stylua,
 
             -- python
-            null_ls.builtins.diagnostics.flake8,
+            -- diagnostics.flake8,
             formatting.black,
 
             formatting.prettier,
             formatting.fish_indent,
-            formatting.djlint,
+            -- formatting.djlint,
             formatting.shfmt,
-            -- formatting.prettier.with {
-            --   extra_filetypes = { "toml" },
-            --   -- extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
-            -- },
-            -- formatting.eslint,
-            -- null_ls.builtins.diagnostics.eslint,
-            null_ls.builtins.diagnostics.fish,
-            null_ls.builtins.diagnostics.markdownlint,
-            null_ls.builtins.completion.spell,
+            diagnostics.fish,
+            diagnostics.markdownlint,
+            completion.spell,
         },
     })
 end

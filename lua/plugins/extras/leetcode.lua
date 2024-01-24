@@ -4,7 +4,9 @@ local M = {
     "kawre/leetcode.nvim",
     build = ":TSUpdate html",
     -- dependencies = { "nvim-treesitter", "telescope.nvim", "nui.nvim", "noice.nvim" },
-    lazy = leet_arg ~= vim.fn.argv()[1],
+    -- lazy = leet_arg ~= vim.fn.argv()[1],
+    -- cmd = "Leet",
+    lazy = false,
     dev = true,
 }
 
@@ -14,7 +16,13 @@ M.opts = {
     lang = "python3",
     debug = true,
 
-    directory = vim.fn.expand("~/projects/leetcode"),
+    storage = {
+        home = "~/projects/leetcode",
+    },
+
+    plugins = {
+        nonstandalone = true,
+    },
 
     injector = {
         ["cpp"] = {
@@ -22,6 +30,9 @@ M.opts = {
         },
         ["java"] = {
             before = { "import java.util.*;" },
+        },
+        ["python3"] = {
+            before = { "from typing import *" },
         },
     },
 

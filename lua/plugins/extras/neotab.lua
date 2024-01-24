@@ -47,21 +47,6 @@ M.opts = {
                     },
                     format = "%s ",
                 },
-                ["="] = {
-                    pairs = {
-                        { open = "(", close = ")" },
-                    },
-                    ft = { "javascript", "typescript" },
-                    format = " %s> ",
-                    cond = "^$",
-                },
-                ["-"] = {
-                    pairs = {
-                        { open = "(", close = ")" },
-                    },
-                    ft = { "java" },
-                    format = " %s> ",
-                },
             },
         },
     },

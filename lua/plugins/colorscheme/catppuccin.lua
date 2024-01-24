@@ -47,6 +47,7 @@ M.opts = {
     custom_highlights = function(colors)
         return {
             DropBarKindFile = { fg = colors.text },
+            cErrInBracket = { fg = colors.red },
         }
     end,
 }

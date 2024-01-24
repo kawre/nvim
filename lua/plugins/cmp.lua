@@ -94,6 +94,7 @@ M.config = function()
         }, {
             { name = "buffer" },
             { name = "path" },
+            -- { name = "copilot" },
         }),
         ---@diagnostic disable-next-line
         window = {

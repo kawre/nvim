@@ -38,7 +38,7 @@ opt.numberwidth = 4 -- minimal number of columns to use for the line number {def
 opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 opt.wrap = false -- display lines as one long line
 opt.scrolloff = 8 -- minimal number of screen lines to keep above and below the cursor
-opt.sidescrolloff = 8 -- minimal number of screen columns to keep to the left and right of the cursor if wrap is `false`
+opt.sidescrolloff = 2 -- minimal number of screen columns to keep to the left and right of the cursor if wrap is `false`
 --opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
 opt.whichwrap:append("<,>,[,],h,l") -- keys allowed to move to the previous/next line when the beginning/end of line is reached
 opt.iskeyword:append("-") -- treats words with `-` as single words
@@ -46,7 +46,10 @@ opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequence of letters whi
 opt.linebreak = true
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
 opt.spelllang = { "en" }
+
 -- opt.fillchars = {
+-- }
+-- opt.fillchars:append({
 --     eob = " ",
 --     foldopen = "",
 --     foldclose = "",
@@ -54,6 +57,18 @@ opt.spelllang = { "en" }
 --     fold = " ",
 --     foldsep = " ",
 --     diff = "╱",
+-- })
+vim.opt.fillchars.eob = "*"
+vim.opt.fillchars.space = "*"
+-- opt.fillchars = {
+--     vert = "▕", -- alternatives │
+--     fold = " ",
+--     eob = " ", -- suppress ~ at EndOfBuffer
+--     diff = "╱", -- alternatives = ⣿ ░ ─
+--     msgsep = "‾",
+--     foldopen = "▾",
+--     foldsep = "│",
+--     foldclose = "▸",
 -- }
 
 vim.g.loaded_perl_provider = 0
