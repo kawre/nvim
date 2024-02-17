@@ -20,22 +20,25 @@ M.capabilities.textDocument.foldingRange = {
 M.setup = function()
     local user = require("config.user")
 
+    local s = vim.diagnostic.severity
+
     local signs = {
-        { name = "DiagnosticSignError", text = user.signs.error },
-        { name = "DiagnosticSignWarn", text = user.signs.warn },
-        { name = "DiagnosticSignHint", text = user.signs.hint },
-        { name = "DiagnosticSignInfo", text = user.signs.info },
+        text = {
+            [s.ERROR] = user.signs.error,
+            [s.WARN] = user.signs.warn,
+            [s.HINT] = user.signs.hint,
+            [s.INFO] = user.signs.info,
+        },
+        numhl = {
+            [s.ERROR] = "DiagnosticSignError",
+            [s.WARN] = "DiagnosticSignWarn",
+            [s.HINT] = "DiagnosticSignHint",
+            [s.INFO] = "DiagnosticSignInfo",
+        },
     }
 
-    for _, sign in ipairs(signs) do
-        vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
-    end
-
     local config = {
-        signs = {
-            active = true,
-            values = signs,
-        },
+        signs = signs,
         virtual_text = false,
         update_in_insert = false,
         underline = true,

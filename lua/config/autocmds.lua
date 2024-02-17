@@ -9,16 +9,11 @@ api.nvim_create_autocmd("BufWritePre", {
     command = "lua vim.lsp.buf.format()",
 })
 
-api.nvim_create_autocmd("TextChangedI", {
-    pattern = "*",
-    callback = function() vim.notify(vim.inspect(vim.diagnostic.config()), vim.log.levels.DEBUG) end,
-})
-
 -- local lsp_fmt_group = vim.api.nvim_create_augroup("LspFormattingGroup", {})
 -- vim.api.nvim_create_autocmd("BufWritePost", {
 --     group = lsp_fmt_group,
 --     callback = function(ev)
---         local efm = vim.lsp.get_active_clients({ name = "efm", bufnr = ev.buf })
+--         local efm = vim.lsp.get_active_clients({ name = "nonels", bufnr = ev.buf })
 --
 --         if vim.tbl_isempty(efm) then return end
 --
@@ -34,18 +29,18 @@ api.nvim_create_autocmd("TextChangedI", {
 --       autocmd BufNewFile,BufRead *.md set syntax=markdown
 --     augroup END
 -- ]])
---
--- -- wrap and check for spell in text filetypes
--- vim.api.nvim_create_autocmd("FileType", {
---     group = vim.api.nvim_create_augroup("wrap_spell", { clear = true }),
---     pattern = { "gitcommit", "markdown" },
---     callback = function()
---         vim.opt_local.textwidth = 80
---         vim.opt_local.wrap = true
---         vim.opt_local.spell = true
---         vim.opt_local.tabstop = 2
---         vim.opt_local.softtabstop = 2
---         vim.opt_local.shiftwidth = 2
---         vim.opt_local.expandtab = true
---     end,
--- })
+
+-- wrap and check for spell in text filetypes
+vim.api.nvim_create_autocmd("FileType", {
+    group = vim.api.nvim_create_augroup("wrap_spell", { clear = true }),
+    pattern = { "gitcommit", "markdown" },
+    callback = function()
+        vim.opt_local.textwidth = 80
+        vim.opt_local.wrap = true
+        vim.opt_local.spell = true
+        vim.opt_local.tabstop = 2
+        vim.opt_local.softtabstop = 2
+        vim.opt_local.shiftwidth = 2
+        vim.opt_local.expandtab = true
+    end,
+})

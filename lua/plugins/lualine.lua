@@ -167,7 +167,24 @@ M.opts = {
             },
         },
         lualine_x = {
+            {
+                function()
+                    if package.loaded["leetcode"] then
+                        local ok, text = pcall(
+                            function() return require("leetcode.config").auth.name end
+                        )
+                        return ok and ("leetcode: " .. text) or ""
+                    end
+
+                    return ""
+                end,
+            },
             { "copilot" },
+            {
+                require("lazy.status").updates,
+                cond = require("lazy.status").has_updates,
+                color = { fg = "#ff9e64" },
+            },
             {
                 "filesize",
                 color = { fg = "#6c7087" },

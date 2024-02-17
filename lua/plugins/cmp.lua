@@ -89,12 +89,16 @@ M.config = function()
             -- entries = { name = "custom", selection_order = "near_cursor" },
         },
         sources = cmp.config.sources({
-            { name = "nvim_lsp" },
+            {
+                name = "nvim_lsp",
+                entry_filter = function(entry, ctx)
+                    return require("cmp.types").lsp.CompletionItemKind[entry:get_kind()] ~= "Text"
+                end,
+            },
             { name = "luasnip" },
         }, {
             { name = "buffer" },
             { name = "path" },
-            -- { name = "copilot" },
         }),
         ---@diagnostic disable-next-line
         window = {

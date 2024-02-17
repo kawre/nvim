@@ -3,26 +3,24 @@ local leet_arg = "leetcode.nvim"
 local M = {
     "kawre/leetcode.nvim",
     build = ":TSUpdate html",
-    -- dependencies = { "nvim-treesitter", "telescope.nvim", "nui.nvim", "noice.nvim" },
     -- lazy = leet_arg ~= vim.fn.argv()[1],
-    -- cmd = "Leet",
-    lazy = false,
+    cmd = "Leet",
     dev = true,
 }
 
 ---@type lc.UserConfig
 M.opts = {
     arg = leet_arg,
-    lang = "python3",
+    lang = "java",
     debug = true,
 
     storage = {
         home = "~/projects/leetcode",
     },
 
-    plugins = {
-        nonstandalone = true,
-    },
+    -- plugins = {
+    --     nonstandalone = true,
+    -- },
 
     injector = {
         ["cpp"] = {
@@ -36,7 +34,7 @@ M.opts = {
         },
     },
 
-    cache = { update_interval = 60 * 60 },
+    cache = { update_interval = 60 * 60 * 24 },
 
     cn = {
         enabled = false,
@@ -44,7 +42,7 @@ M.opts = {
 
     hooks = {
         LeetEnter = {
-            function() vim.cmd("silent Copilot disable") end,
+            function() pcall(vim.cmd, "silent Copilot disable") end,
         },
     },
 
@@ -61,6 +59,7 @@ M.keys = {
     { "<leader>lr", mode = { "n" }, "<cmd>Leet run<cr>" },
     { "<leader>ls", mode = { "n" }, "<cmd>Leet submit<cr>" },
     { "<leader>ly", mode = { "n" }, "<cmd>Leet yank<cr>" },
+    { "<leader>lo", mode = { "n" }, "<cmd>Leet open<cr>" },
 }
 
 return M

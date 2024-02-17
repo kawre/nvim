@@ -2,7 +2,7 @@ local M = {
     "folke/noice.nvim",
     dependencies = {
         "MunifTanjim/nui.nvim",
-        "rcarriga/nvim-notify",
+        -- "rcarriga/nvim-notify",
     },
     priority = 1000,
     lazy = false,

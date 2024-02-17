@@ -1,7 +1,7 @@
 local M = {
     "willothy/nvim-cokeline",
     event = "VeryLazy",
-    enabled = true,
+    enabled = false,
 }
 
 M.opts = {}
