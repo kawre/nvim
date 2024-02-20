@@ -47,7 +47,12 @@ M.opts = {
     custom_highlights = function(colors)
         return {
             DropBarKindFile = { fg = colors.text },
-            cErrInBracket = { fg = colors.red },
+            -- cErrInBracket = { fg = colors.red },
+            -- VM_Mono = { fg = colors.text },
+            -- VM_Cursor = { fg = colors.text },
+            -- VM_Extend = { fg = colors.text },
+            -- VM_Insert = { fg = colors.text },
+            -- MultiCursor = { bg = colors.blue },
         }
     end,
 }

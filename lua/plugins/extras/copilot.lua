@@ -2,7 +2,6 @@ local M = {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
-    enabled = false,
     dependencies = {
         -- "zbirenbaum/copilot-cmp",
     },

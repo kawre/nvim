@@ -2,7 +2,6 @@ local M = {
     "mg979/vim-visual-multi",
     branch = "master",
     event = "VeryLazy",
-    enabled = false,
 }
 
 M.init = function()

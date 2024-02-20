@@ -6,6 +6,9 @@ local M = {
 M.opts = {
     -- render = "wrapped-compact",
     -- max_width = 75,
+    on_open = function(win) --
+        vim.api.nvim_win_set_config(win, { zindex = 100 })
+    end,
 }
 
 M.config = function(_, opts)
