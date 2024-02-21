@@ -11,7 +11,7 @@ local M = {
 ---@type lc.UserConfig
 M.opts = {
     arg = leet_arg,
-    lang = "java",
+    lang = "python3",
     debug = true,
 
     storage = {

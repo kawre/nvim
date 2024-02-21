@@ -11,11 +11,12 @@ local M = {
 M.keys = {
     {
         "<Tab>",
-        function()
-            return require("luasnip").jumpable(1) --
-                    and "<Plug>luasnip-jump-next"
-                or "<Plug>(neotab-out)"
-        end,
+        -- function()
+        --     return require("luasnip").jumpable(1) --
+        --             and "<Plug>luasnip-jump-next"
+        --         or "<Plug>(neotab-out)"
+        -- end,
+        function() return "<Plug>(neotab-out-luasnip)" end,
         expr = true,
         silent = true,
         mode = "i",
@@ -34,10 +35,11 @@ M.keys = {
 
 M.opts = {}
 
-M.config = function(_, opts)
+M.config = function()
     -- HACK: Cancel the snippet session when leaving insert mode.
     local luasnip = require("luasnip")
     local unlink_group = vim.api.nvim_create_augroup("UnlinkSnippet", {})
+    local types = require("luasnip.util.types")
 
     vim.api.nvim_create_autocmd("ModeChanged", {
         group = unlink_group,
@@ -54,7 +56,19 @@ M.config = function(_, opts)
         end,
     })
 
-    luasnip.setup(opts)
+    luasnip.setup({
+        ext_opts = {
+            [types.insertNode] = {
+                active = {
+                    virt_text = { { "", "LuasnipActiveIcon" } },
+                    hl_mode = "combine",
+                },
+                unvisited = {
+                    hl_group = "LuasnipUnvisited",
+                },
+            },
+        },
+    })
 end
 
 return M

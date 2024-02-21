@@ -47,12 +47,8 @@ M.opts = {
     custom_highlights = function(colors)
         return {
             DropBarKindFile = { fg = colors.text },
-            -- cErrInBracket = { fg = colors.red },
-            -- VM_Mono = { fg = colors.text },
-            -- VM_Cursor = { fg = colors.text },
-            -- VM_Extend = { fg = colors.text },
-            -- VM_Insert = { fg = colors.text },
-            -- MultiCursor = { bg = colors.blue },
+            LuasnipUnvisited = { bg = colors.surface1 },
+            LuasnipActiveIcon = { fg = colors.peach },
         }
     end,
 }
