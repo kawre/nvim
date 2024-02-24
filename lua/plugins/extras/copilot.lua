@@ -36,6 +36,7 @@ M.opts = {
         hgcommit = false,
         svn = false,
         cvs = false,
+        ["leetcode.nvim"] = false,
         ["."] = false,
     },
     copilot_node_command = "node",

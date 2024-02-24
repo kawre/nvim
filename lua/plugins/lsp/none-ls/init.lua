@@ -17,8 +17,8 @@ function M.config()
             formatting.stylua,
 
             -- python
-            -- diagnostics.flake8,
             formatting.black,
+            -- diagnostics.mypy,
 
             formatting.prettier,
             formatting.fish_indent,

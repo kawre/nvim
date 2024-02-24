@@ -3,7 +3,6 @@ local M = {
     build = "make install_jsregexp",
     dependencies = {
         "friendly-snippets",
-        "neotab.nvim",
     },
     event = "VeryLazy",
 }

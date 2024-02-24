@@ -2,7 +2,6 @@ local M = {
     "SmiteshP/nvim-navbuddy",
     dependencies = {
         "SmiteshP/nvim-navic",
-        "MunifTanjim/nui.nvim",
     },
     event = "VeryLazy",
 }

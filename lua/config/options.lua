@@ -47,19 +47,24 @@ opt.linebreak = true
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
 opt.spelllang = { "en" }
 
+opt.foldcolumn = "1" -- '0' is not bad
+opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+opt.foldlevelstart = 99
+opt.foldenable = true
+
 -- opt.fillchars = {
 -- }
--- opt.fillchars:append({
---     eob = " ",
---     foldopen = "",
---     foldclose = "",
---     -- fold = "⸱",
---     fold = " ",
---     foldsep = " ",
---     diff = "╱",
--- })
-vim.opt.fillchars.eob = "*"
-vim.opt.fillchars.space = "*"
+opt.fillchars:append({
+    eob = " ",
+    foldopen = "",
+    foldclose = "",
+    fold = "⸱",
+    -- fold = " ",
+    foldsep = " ",
+    diff = "╱",
+})
+-- opt.fillchars.eob = "*"
+-- opt.fillchars.space = "*"
 -- opt.fillchars = {
 --     vert = "▕", -- alternatives │
 --     fold = " ",

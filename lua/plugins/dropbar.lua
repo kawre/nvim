@@ -6,6 +6,7 @@ local M = {
         "nvim-telescope/telescope-fzf-native.nvim",
     },
     event = "VeryLazy",
+    enabled = vim.fn.has("nvim-0.10") == 1,
 }
 
 M.opts = {
