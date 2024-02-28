@@ -47,6 +47,13 @@ M.opts = {
                     },
                     format = "%s ",
                 },
+                [":"] = {
+                    pairs = {
+                        { open = "(", close = ")" },
+                    },
+                    ft = { "python" },
+                    format = "%s\n",
+                },
             },
         },
     },

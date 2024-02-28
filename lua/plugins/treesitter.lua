@@ -14,8 +14,8 @@ M.opts = {
         enable = true,
     },
     indent = {
-        disable = { "python", "dart", "cpp" },
-        enable = false,
+        disable = { "dart", "cpp" },
+        enable = true,
     },
     query_linter = {
         enable = true,

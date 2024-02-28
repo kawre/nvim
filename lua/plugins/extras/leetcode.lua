@@ -4,12 +4,11 @@ local M = {
     "kawre/leetcode.nvim",
     build = ":TSUpdate html",
     -- lazy = leet_arg ~= vim.fn.argv()[1],
-    -- cmd = "Leet",
-    lazy = false,
+    cmd = "Leet",
     dev = true,
 }
 
----@type lc.UserConfig
+---@return lc.UserConfig
 M.opts = function()
     local imports = require("leetcode.config.imports")
 
@@ -23,16 +22,22 @@ M.opts = function()
         },
 
         plugins = {
-            -- non_standalone = true,
+            non_standalone = true,
         },
 
         injector = {
             ["cpp"] = {
-                -- before = { "#include <bits/stdc++.h>", "using namespace std;" },
+                before = { "#include <bits/stdc++.h>", "using namespace std;" },
+            },
+            ["java"] = {
                 before = true,
             },
-            ["java"] = { before = true },
-            ["python3"] = { before = true },
+            ["python3"] = {
+                before = vim.list_extend({ "from .leetcode import *" }, imports.python3),
+            },
+            ["python"] = {
+                before = true,
+            },
         },
 
         cache = { update_interval = 60 * 60 * 24 },
