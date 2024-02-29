@@ -30,7 +30,9 @@ M.config = function()
 
     cmp.setup({ ---@diagnostic disable-line
         snippet = {
-            expand = function(args) luasnip.lsp_expand(args.body) end,
+            expand = function(args)
+                luasnip.lsp_expand(args.body)
+            end,
         },
         preselect = cmp.PreselectMode.None,
         completion = { ---@diagnostic disable-line
@@ -149,7 +151,9 @@ M.config = function()
     })
 
     local ok, cmp_npairs = pcall(require, "nvim-autopairs.completion.cmp")
-    if ok then cmp.event:on("confirm_done", cmp_npairs.on_confirm_done()) end
+    if ok then
+        cmp.event:on("confirm_done", cmp_npairs.on_confirm_done())
+    end
 end
 
 return M

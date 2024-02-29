@@ -15,19 +15,25 @@ M.keys = {
         --             and "<Plug>luasnip-jump-next"
         --         or "<Plug>(neotab-out)"
         -- end,
-        function() return "<Plug>(neotab-out-luasnip)" end,
+        function()
+            return "<Plug>(neotab-out-luasnip)"
+        end,
         expr = true,
         silent = true,
         mode = "i",
     },
     {
         "<Tab>",
-        function() require("luasnip").jump(1) end,
+        function()
+            require("luasnip").jump(1)
+        end,
         mode = "s",
     },
     {
         "<S-Tab>",
-        function() require("luasnip").jump(-1) end,
+        function()
+            require("luasnip").jump(-1)
+        end,
         mode = { "i", "s" },
     },
 }

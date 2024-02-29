@@ -31,6 +31,8 @@ function M.get_efm_languages()
     return languages
 end
 
-function M.get_available_lsps() return M.scandir("~/.config/nvim/lua/plugins/lsp/config/settings") end
+function M.get_available_lsps()
+    return M.scandir("~/.config/nvim/lua/plugins/lsp/config/settings")
+end
 
 return M

@@ -21,6 +21,10 @@ M.opts = function()
             home = "~/projects/leetcode",
         },
 
+        cn = {
+            enabled = false,
+        },
+
         plugins = {
             non_standalone = true,
         },
@@ -42,12 +46,10 @@ M.opts = function()
 
         cache = { update_interval = 60 * 60 * 24 },
 
-        cn = {
-            enabled = false,
-        },
-
         hooks = {
-            ["enter"] = function() pcall(vim.cmd, "Copilot disable") end,
+            ["enter"] = function()
+                pcall(vim.cmd, [[silent! Copilot disable]])
+            end,
         },
 
         image_support = false,

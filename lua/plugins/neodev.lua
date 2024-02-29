@@ -1,8 +1,8 @@
 local M = {
-  "folke/neodev.nvim",
-  dependencies = {
-    "neovim/nvim-lspconfig",
-  },
+    "folke/neodev.nvim",
+    dependencies = {
+        "neovim/nvim-lspconfig",
+    },
 }
 
 M.opts = {}

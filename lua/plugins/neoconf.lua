@@ -1,5 +1,5 @@
 local M = {
-  "folke/neoconf.nvim",
+    "folke/neoconf.nvim",
 }
 
 M.opts = {}

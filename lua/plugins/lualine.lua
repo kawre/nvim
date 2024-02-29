@@ -170,9 +170,9 @@ M.opts = {
             {
                 function()
                     if package.loaded["leetcode"] then
-                        local ok, text = pcall(
-                            function() return require("leetcode.config").auth.name end
-                        )
+                        local ok, text = pcall(function()
+                            return require("leetcode.config").auth.name
+                        end)
                         return ok and ("leetcode: " .. text) or ""
                     end
 

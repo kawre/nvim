@@ -9,13 +9,17 @@ M.keys = {
     {
         "<leader>la",
         mode = { "v", "n" },
-        function() require("actions-preview").code_actions() end,
+        function()
+            require("actions-preview").code_actions()
+        end,
         desc = "Code Actions",
     },
     {
         "<C-.>",
         mode = { "v", "n" },
-        function() require("actions-preview").code_actions() end,
+        function()
+            require("actions-preview").code_actions()
+        end,
         desc = "Code Actions",
     },
 }
@@ -30,7 +34,9 @@ M.config = function()
                 height = 0.75,
                 prompt_position = "top",
                 preview_cutoff = 20,
-                preview_height = function(_, _, max_lines) return max_lines - 15 end,
+                preview_height = function(_, _, max_lines)
+                    return max_lines - 15
+                end,
             },
         },
     })

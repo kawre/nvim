@@ -5,7 +5,9 @@ local M = {
     lazy = false,
 }
 
-M.init = function() vim.cmd.colorscheme("catppuccin") end
+M.init = function()
+    vim.cmd.colorscheme("catppuccin")
+end
 
 M.opts = {
     integrations = {

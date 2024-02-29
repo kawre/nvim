@@ -50,8 +50,20 @@ M.opts = {
 }
 
 M.keys = {
-    { mode = "n", "zR", function() require("ufo").openAllFolds() end },
-    { mode = "n", "zM", function() require("ufo").closeAllFolds() end },
+    {
+        mode = "n",
+        "zR",
+        function()
+            require("ufo").openAllFolds()
+        end,
+    },
+    {
+        mode = "n",
+        "zM",
+        function()
+            require("ufo").closeAllFolds()
+        end,
+    },
 }
 
 return M
