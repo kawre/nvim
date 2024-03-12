@@ -52,6 +52,16 @@ M.opts = function()
             end,
         },
 
+        theme = {},
+
+        keys = {
+            toggle = { "q", "<Esc>" },
+        },
+
+        console = {
+            open_on_runcode = true,
+        },
+
         image_support = false,
     }
 end

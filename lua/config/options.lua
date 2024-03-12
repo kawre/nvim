@@ -58,6 +58,14 @@ opt.spelllang = { "en" }
 --     foldsep = " ",
 --     diff = "╱",
 -- })
+-- opt.list = true
+-- opt.listchars:append({
+-- eol = "↲",
+-- extends = "»",
+-- precedes = "«",
+-- space = "·",
+-- nbsp = "␣",
+-- })
 -- opt.fillchars.eob = "*"
 -- opt.fillchars.space = "*"
 -- opt.fillchars = {

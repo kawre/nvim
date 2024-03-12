@@ -3,6 +3,12 @@ local keymap = vim.keymap.set
 vim.g.mapleader = " "
 local opts = { silent = true }
 
+-- better j/k
+keymap({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+keymap({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+keymap({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+keymap({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 
@@ -28,7 +34,7 @@ keymap("n", "<C-Left>", "<cmd>vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", "<cmd>vertical resize +2<CR>", opts)
 
 -- clear highlights
-keymap("n", "<leader>ch", "<cmd>nohlsearch<cr>", opts)
+keymap({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
 -- tab indentation
 keymap("v", "<Tab>", ">gv", opts)
