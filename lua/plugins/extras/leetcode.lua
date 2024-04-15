@@ -4,6 +4,7 @@ local M = {
     "kawre/leetcode.nvim",
     build = ":TSUpdate html",
     -- lazy = leet_arg ~= vim.fn.argv()[1],
+    dependencies = { "bufferline.nvim" },
     cmd = "Leet",
     dev = true,
 }

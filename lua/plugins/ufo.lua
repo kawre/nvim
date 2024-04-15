@@ -4,7 +4,6 @@ local M = {
         "kevinhwang91/promise-async",
     },
     event = "VeryLazy",
-    -- enabled = false,
 }
 
 M.init = function()

@@ -47,13 +47,13 @@ M.opts = {
                     },
                     format = "%s ",
                 },
-                [":"] = {
-                    pairs = {
-                        { open = "(", close = ")" },
-                    },
-                    ft = { "python" },
-                    format = "%s\n",
-                },
+                -- [":"] = {
+                --     pairs = {
+                --         { open = "(", close = ")" },
+                --     },
+                --     ft = { "python" },
+                --     format = "%s\n",
+                -- },
             },
         },
     },
