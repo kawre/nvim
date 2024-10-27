@@ -33,20 +33,20 @@ M.opts = {
             enabled = true,
 
             triggers = {
-                ["+"] = {
-                    pairs = {
-                        { open = '"', close = '"' },
-                    },
-                    format = " %s ",
-                    ft = { "java" },
-                },
-                [","] = {
-                    pairs = {
-                        { open = "'", close = "'" },
-                        { open = '"', close = '"' },
-                    },
-                    format = "%s ",
-                },
+                -- ["+"] = {
+                --     pairs = {
+                --         { open = '"', close = '"' },
+                --     },
+                --     format = " %s ",
+                --     ft = { "java" },
+                -- },
+                -- [","] = {
+                --     pairs = {
+                --         { open = "'", close = "'" },
+                --         { open = '"', close = '"' },
+                --     },
+                --     format = "%s ",
+                -- },
                 -- [":"] = {
                 --     pairs = {
                 --         { open = "(", close = ")" },

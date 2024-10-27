@@ -13,7 +13,7 @@ keymap({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent 
 keymap("", "<Space>", "<Nop>", opts)
 
 -- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
+-- keymap("i", "jk", "<ESC>", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)

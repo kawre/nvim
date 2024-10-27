@@ -26,7 +26,6 @@ M.config = function()
 
     local cmp = require("cmp")
     local luasnip = require("luasnip")
-    local neotab = require("neotab")
 
     cmp.setup({ ---@diagnostic disable-line
         snippet = {

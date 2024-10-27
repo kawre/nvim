@@ -21,15 +21,6 @@
       ],
       "Lua.runtime.version": "LuaJIT",
       "Lua.format.enable": false
-    },
-    "jdtls": {
-      "java.configuration.runtimes": [
-        {
-          "name": "JavaSE-21",
-          "path": "/usr/lib/jvm/java-21-openjdk",
-          "default": true
-        }
-      ]
     }
   }
 }

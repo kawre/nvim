@@ -4,7 +4,11 @@ local M = {
 }
 
 M.opts = {
-    mapping = { "jk" },
+    default_mappings = false,
+    mappings = {
+        i = { j = { k = "<Esc>" } },
+        t = { j = { k = "<C-\\><C-n>" } },
+    },
 }
 
 return M

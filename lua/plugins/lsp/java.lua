@@ -22,6 +22,9 @@ M.opts = {
     jdk = {
         auto_install = true,
     },
+    notifications = {
+        dap = false,
+    },
 }
 
 return M

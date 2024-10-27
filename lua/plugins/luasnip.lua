@@ -10,13 +10,17 @@ local M = {
 M.keys = {
     {
         "<Tab>",
-        -- function()
-        --     return require("luasnip").jumpable(1) --
-        --             and "<Plug>luasnip-jump-next"
-        --         or "<Plug>(neotab-out)"
-        -- end,
         function()
-            return "<Plug>(neotab-out-luasnip)"
+            if package.loaded["neotab"] then
+                -- return require("luasnip").jumpable(1) --
+                --         and "<Plug>luasnip-jump-next"
+                --     or "<Plug>(neotab-out)"
+                return "<Plug>(neotab-out-luasnip)"
+            else
+                return require("luasnip").jumpable(1) --
+                        and "<Plug>luasnip-jump-next"
+                    or "<Tab>"
+            end
         end,
         expr = true,
         silent = true,
@@ -29,13 +33,13 @@ M.keys = {
         end,
         mode = "s",
     },
-    {
-        "<S-Tab>",
-        function()
-            require("luasnip").jump(-1)
-        end,
-        mode = { "i", "s" },
-    },
+    -- {
+    --     "<S-Tab>",
+    --     function()
+    --         require("luasnip").jump(-1)
+    --     end,
+    --     mode = { "i", "s" },
+    -- },
 }
 
 M.opts = {}

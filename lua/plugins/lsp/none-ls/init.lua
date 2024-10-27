@@ -22,7 +22,7 @@ function M.config()
 
             formatting.prettier,
             formatting.fish_indent,
-            -- formatting.djlint,
+            diagnostics.djlint,
             formatting.shfmt,
             diagnostics.fish,
             diagnostics.markdownlint,

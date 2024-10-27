@@ -10,7 +10,7 @@ local M = {
 }
 
 M.opts = {
-    general = {
+    bar = {
         update_events = {
             win = {
                 "CursorMoved",

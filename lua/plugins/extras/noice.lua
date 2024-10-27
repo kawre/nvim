@@ -58,6 +58,14 @@ M.opts = {
             },
             opts = { skip = true },
         },
+        {
+            filter = {
+                any = {
+                    { find = "clipboard: error: Nothing is copied" },
+                },
+            },
+            opts = { skip = true },
+        },
     },
 }
 

@@ -4,7 +4,15 @@ local M = {
     "kawre/leetcode.nvim",
     build = ":TSUpdate html",
     -- lazy = leet_arg ~= vim.fn.argv()[1],
-    dependencies = { "bufferline.nvim" },
+    dependencies = {
+        "bufferline.nvim",
+        "telescope.nvim",
+        "plenary.nvim",
+        "nui.nvim",
+        "nvim-notify",
+        "nvim-web-devicons",
+        "nvim-treesitter",
+    },
     cmd = "Leet",
     dev = true,
 }

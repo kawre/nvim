@@ -26,7 +26,7 @@ M.opts = {
     default_component_configs = {
         indent = {
             indent_size = 3,
-            highlight = "Comment",
+            -- highlight = "Comment",
         },
         icon = {
             folder_closed = "",

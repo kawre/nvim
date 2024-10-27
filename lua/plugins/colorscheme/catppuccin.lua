@@ -51,6 +51,7 @@ M.opts = {
             DropBarKindFile = { fg = colors.text },
             LuasnipUnvisited = { bg = colors.surface1 },
             LuasnipActiveIcon = { fg = colors.peach },
+            LspInlayHint = { bg = colors.surface0 },
         }
     end,
 }
