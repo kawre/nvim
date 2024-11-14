@@ -15,7 +15,7 @@ M.keys = {
     { "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find Keymap" },
     { "<leader>fp", "<cmd>Telescope project<CR>", desc = "Find Project" },
     { "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Find Tags" },
-    { "<leader>fn", "<cmd>Telescope notify<CR>", desc = "Find Notifications" },
+    -- { "<leader>fn", "<cmd>Telescope notify<CR>", desc = "Find Notifications" },
 }
 
 M.opts = {
@@ -34,6 +34,7 @@ M.opts = {
         },
         file_ignore_patterns = {
             ".git/",
+            "tests/",
             "node_modules",
         },
     },
@@ -54,7 +55,7 @@ M.config = function(_, opts)
     local telescope = require("telescope")
 
     telescope.setup(opts)
-    telescope.load_extension("notify")
+    -- telescope.load_extension("notify")
 end
 
 return M

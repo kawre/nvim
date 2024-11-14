@@ -13,6 +13,10 @@ M.keys = {
     { "y", mode = { "n", "x" }, "<Plug>(YankyYank)" },
 }
 
-M.opts = {}
+M.opts = {
+    highlight = {
+        timer = 250,
+    },
+}
 
 return M

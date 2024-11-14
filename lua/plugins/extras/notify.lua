@@ -1,6 +1,7 @@
 local M = {
     "rcarriga/nvim-notify",
     event = "VeryLazy",
+    enabled = false,
 }
 
 M.opts = {

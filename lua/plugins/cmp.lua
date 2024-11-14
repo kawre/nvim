@@ -11,6 +11,7 @@ local M = {
     },
     version = false,
     event = { "InsertEnter", "CmdLineEnter" },
+    enabled = false,
 }
 
 local function truncateString(str, maxLen)
@@ -75,7 +76,7 @@ M.config = function()
             fields = { "kind", "abbr", "menu" },
             format = function(_, item)
                 item.menu = item.kind
-                item.menu_hl_group = "CmpItemKind" .. item.kind
+                item.menu_hl_group = "CmpItemKind" .. (item.kind or "")
                 item.kind = user.kinds[item.kind]
                 item.abbr = truncateString(item.abbr, 50)
 

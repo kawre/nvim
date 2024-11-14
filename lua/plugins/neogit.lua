@@ -5,7 +5,7 @@ local M = {
         "nvim-telescope/telescope.nvim", -- optional
         "sindrets/diffview.nvim", -- optional
     },
-    enabled = true,
+    enabled = false,
     cmd = "Neogit",
 }
 

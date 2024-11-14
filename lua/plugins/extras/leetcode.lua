@@ -1,3 +1,5 @@
+---@module 'leetcode'
+
 local leet_arg = "leetcode.nvim"
 
 local M = {
@@ -34,9 +36,9 @@ M.opts = function()
             enabled = false,
         },
 
-        plugins = {
-            non_standalone = true,
-        },
+        -- plugins = {
+        --     non_standalone = true,
+        -- },
 
         injector = {
             ["cpp"] = {

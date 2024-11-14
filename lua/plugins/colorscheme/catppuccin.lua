@@ -43,6 +43,7 @@ M.opts = {
         semantic_tokens = true,
         telescope = true,
         treesitter = true,
+        blink_cmp = true,
         which_key = true,
         dropbar = { enabled = true, color_mode = true },
     },

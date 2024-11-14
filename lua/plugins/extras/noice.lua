@@ -44,6 +44,7 @@ M.opts = {
                     { find = "^%d+ fewer lines$" },
                     { find = "^%d+ more lines$" },
                     { find = "^%d+ lines yanked$" },
+                    { find = "^%d+ lines [<>]ed %d+ time$" },
                 },
             },
             view = "mini",

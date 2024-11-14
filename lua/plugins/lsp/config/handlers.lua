@@ -1,10 +1,8 @@
 local M = {}
 
-local ncmp = require("cmp_nvim_lsp")
-
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-M.capabilities = ncmp.default_capabilities(M.capabilities)
+M.capabilities = require("blink.cmp").get_lsp_capabilities(M.capabilities)
 M.capabilities.textDocument.completion.completionItem.resolveSupport = {
     properties = {
         "documentation",

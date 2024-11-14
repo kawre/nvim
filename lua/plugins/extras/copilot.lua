@@ -1,8 +1,9 @@
 local M = {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
-    event = "InsertEnter",
-    enabled = false,
+    -- event = "InsertEnter",
+    lazy = false,
+    -- enabled = false,
 }
 
 M.opts = {

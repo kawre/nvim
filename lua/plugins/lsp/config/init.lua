@@ -4,6 +4,7 @@ local M = {
         "neodev.nvim",
         "neoconf.nvim",
         "nvim-navbuddy",
+        "saghen/blink.cmp",
     },
     event = { "BufReadPost", "BufNewFile" },
     cmd = { "LspInfo", "LspInstall", "LspUninstall" },
@@ -15,7 +16,7 @@ M.config = function()
     local utils = require("config.utils")
     local lspconfig = require("lspconfig")
 
-    local opts = {
+    local params = {
         on_attach = require("plugins.lsp.config.handlers").on_attach,
         capabilities = require("plugins.lsp.config.handlers").capabilities,
     }
@@ -24,7 +25,7 @@ M.config = function()
         local setup = require("plugins.lsp.config.settings." .. lsp) or {}
 
         if setup.enabled == nil or setup.enabled == true then
-            lspconfig[setup.name or lsp].setup(vim.tbl_deep_extend("force", opts, setup))
+            lspconfig[setup.name or lsp].setup(vim.tbl_deep_extend("force", params, setup))
         end
     end
 end

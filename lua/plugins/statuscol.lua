@@ -1,6 +1,7 @@
 local M = {
     "luukvbaal/statuscol.nvim",
-    -- enabled = false,
+    lazy = false,
+    enabled = false,
 }
 
 M.opts = function()

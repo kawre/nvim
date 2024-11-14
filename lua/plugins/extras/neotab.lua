@@ -20,7 +20,7 @@ M.opts = {
         { open = "<", close = ">" },
     },
 
-    debug = true,
+    debug = false,
 
     smart_punctuators = {
         enabled = true,

@@ -45,3 +45,6 @@ keymap("n", "<leader>w", "<cmd>w<cr>", opts)
 
 -- lazy
 keymap("n", "<leader>lo", "<cmd>Lazy<CR>", opts)
+
+-- tests
+keymap("n", "<leader>pt", "<Plug>PlenaryTestFile", opts)

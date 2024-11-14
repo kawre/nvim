@@ -8,6 +8,7 @@ local M = {
     enabled = false,
 }
 
+
 M.opts = {
     lsp = {
         on_attach = require("plugins.lsp.config.handlers").on_attach,

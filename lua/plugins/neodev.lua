@@ -1,8 +1,9 @@
 local M = {
     "folke/neodev.nvim",
     dependencies = {
-        "neovim/nvim-lspconfig",
+        "nvim-lspconfig",
     },
+    enabled = false,
 }
 
 M.opts = {}
