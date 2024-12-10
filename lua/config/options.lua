@@ -1,7 +1,7 @@
 package.path = package.path
-    .. ";"
-    .. vim.fn.expand("$HOME")
-    .. "/.luarocks/share/lua/5.1/?/init.lua;"
+	.. ";"
+	.. vim.fn.expand("$HOME")
+	.. "/.luarocks/share/lua/5.1/?/init.lua;"
 package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"
 
 local opt = vim.opt
@@ -26,7 +26,7 @@ opt.timeoutlen = 500 -- time to wait for a mapped sequence to complete (in milli
 opt.undofile = true -- enable persistent undo
 opt.updatetime = 300 -- faster completion (4000ms default)
 opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-opt.expandtab = true -- convert tabs to spaces
+opt.expandtab = false -- convert tabs to spaces
 opt.tabstop = 2 -- insert 2 spaces for a tab
 opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
 opt.cursorline = true -- highlight the current line

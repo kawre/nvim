@@ -1,8 +1,8 @@
 local M = {
-    "akinsho/bufferline.nvim",
-    -- event = "VeryLazy",
-    -- enabled = true,
-    -- lazy = false,
+	"akinsho/bufferline.nvim",
+	-- event = "VeryLazy",
+	enabled = false,
+	lazy = false,
 }
 
 M.opts = {}

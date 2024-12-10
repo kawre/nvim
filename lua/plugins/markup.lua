@@ -1,11 +1,13 @@
+---@module 'markup'
+
 local M = {
-    "kawre/markup.nvim",
-    dev = true,
-    lazy = false,
+	"kawre/markup.nvim",
+	dev = true,
+	cmd = "Markup",
 }
 
-M.config = function()
-    require("markup-playground").setup()
-end
+M.opts = {
+	debug = true,
+}
 
 return M
