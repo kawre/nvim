@@ -153,7 +153,7 @@ M.opts = {
 		lualine_b = {},
 		lualine_c = {
 			{ "branch", icon = "", color = { fg = "#cba6f8" } },
-			{ "filename" },
+			-- { "filename" },
 			{
 				"diagnostics",
 				symbols = {

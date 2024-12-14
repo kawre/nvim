@@ -1,6 +1,6 @@
 local M = {
 	"ibhagwan/fzf-lua",
-	lazy = false,
+	event = "VeryLazy",
 }
 
 M.opts = {}

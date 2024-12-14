@@ -4,6 +4,7 @@ local M = {
 	"folke/noice.nvim",
 	priority = 1000,
 	lazy = false,
+	-- enabled = false,
 }
 
 M.opts = {

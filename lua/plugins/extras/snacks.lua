@@ -1,5 +1,7 @@
 ---@module 'snacks'
 
+local signs = require("config.user").signs
+
 local M = {
 	"folke/snacks.nvim",
 	priority = 1000,
@@ -10,8 +12,14 @@ local M = {
 M.opts = {
 	bigfile = { enabled = true },
 	notifier = {
-		-- enabled = false,
-		-- style = "fancy",
+		icons = {
+			error = signs.error,
+			warn = signs.warn,
+			info = signs.info,
+			debug = signs.debug,
+			trace = signs.trace,
+		},
+		level = vim.log.levels.INFO,
 	},
 	quickfile = { enabled = true },
 	statuscolumn = {

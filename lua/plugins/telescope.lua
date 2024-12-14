@@ -2,8 +2,8 @@ local M = {
 	"nvim-telescope/telescope.nvim",
 	version = false,
 	dependencies = {
+		"plenary.nvim",
 		"nvim-telescope/telescope-project.nvim",
-		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
 	event = "VeryLazy",

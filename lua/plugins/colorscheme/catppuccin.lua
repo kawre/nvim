@@ -56,6 +56,7 @@ M.opts = {
 			LuasnipActiveIcon = { fg = colors.peach },
 			LspInlayHint = { bg = colors.surface0 },
 			SnacksIndent = { fg = colors.surface0 },
+			NeoTreeIndentMarker = { fg = colors.surface0 },
 		}
 	end,
 }

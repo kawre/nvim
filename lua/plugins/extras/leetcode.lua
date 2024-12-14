@@ -7,13 +7,11 @@ local M = {
 	build = ":TSUpdate html",
 	lazy = leet_arg ~= vim.fn.argv(0, -1),
 	dependencies = {
-		"bufferline.nvim",
-		"telescope.nvim",
+		-- "telescope.nvim",
+		"fzf-lua",
 		"plenary.nvim",
 		"nui.nvim",
-		"nvim-notify",
 		"nvim-web-devicons",
-		"nvim-treesitter",
 	},
 	cmd = "Leet",
 	dev = true,
@@ -39,6 +37,9 @@ M.opts = function()
 		-- plugins = {
 		-- 	non_standalone = true,
 		-- },
+		picker = {
+			provider = "fzf-lua",
+		},
 
 		injector = {
 			["cpp"] = {
@@ -49,6 +50,7 @@ M.opts = function()
 			},
 			["python3"] = {
 				before = vim.list_extend({ "from .leetcode import *" }, imports.python3),
+				after = { "def test():", "	 test()" },
 			},
 			["python"] = {
 				before = true,
