@@ -18,6 +18,7 @@ M.keys = {
 	{ "<leader>fp", "<cmd>Telescope project<CR>", desc = "Find Project" },
 	{ "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Find Tags" },
 	{ "<leader>fn", "<cmd>Telescope notifier<CR>", desc = "Find Notifications" },
+	{ "<leader>s", "<cmd>Telescope lsp_document_symbols<CR>", desc = "Find Document Symbols" },
 }
 
 M.opts = {

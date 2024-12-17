@@ -3,7 +3,6 @@
 local M = {
 	"kawre/neotab.nvim",
 	event = "InsertEnter",
-	enabled = true,
 	dev = true,
 }
 

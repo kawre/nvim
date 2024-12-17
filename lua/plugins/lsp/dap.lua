@@ -57,48 +57,12 @@ M.config = function()
 end
 
 M.keys = {
-	{
-		"<F1>",
-		function()
-			require("dap").continue()
-		end,
-		desc = "[DAP] Continue",
-	},
-	{
-		"<F2>",
-		function()
-			require("dap").step_into()
-		end,
-		desc = "[DAP] Step Into",
-	},
-	{
-		"<F3>",
-		function()
-			require("dap").step_over()
-		end,
-		desc = "[DAP] Step Over",
-	},
-	{
-		"<F4>",
-		function()
-			require("dap").step_out()
-		end,
-		desc = "[DAP] Step Out",
-	},
-	{
-		"<F5>",
-		function()
-			require("dap").step_back()
-		end,
-		desc = "[DAP] Step Back",
-	},
-	{
-		"<leader>dd",
-		function()
-			require("dap").toggle_breakpoint()
-		end,
-		desc = "[DAP] Toggle Breakpoint",
-	},
+	{ "<F1>", "<cmd>DapContinue<CR>", desc = "[DAP] Continue" },
+	{ "<F2>", "<cmd>DapStepInto<CR>", desc = "[DAP] Step Into" },
+	{ "<F3>", "<cmd>DapStepOver<CR>", desc = "[DAP] Step Over" },
+	{ "<F4>", "<cmd>DapStepOut<CR>", desc = "[DAP] Step Out" },
+	{ "<F5>", "<cmd>DapStepBack<CR>", desc = "[DAP] Step Back" },
+	{ "<leader>dd", "<cmd>DapToggleBreakpoint<CR>", desc = "[DAP] Toggle Breakpoint" },
 	{
 		"<leader>dc",
 		function()

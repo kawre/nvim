@@ -17,6 +17,7 @@ M.opts = {
 		"lazy",
 		"leetcode.nvim",
 		"blink-cmp-menu",
+		"dapui_hover",
 	},
 }
 

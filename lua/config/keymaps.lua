@@ -43,8 +43,4 @@ keymap("v", "<S-Tab>", "<gv", opts)
 -- write
 keymap("n", "<leader>w", "<cmd>w<cr>", opts)
 
--- lazy
-keymap("n", "<leader>lo", "<cmd>Lazy<CR>", opts)
-
--- tests
-keymap("n", "<leader>pt", "<Plug>PlenaryTestFile", opts)
+keymap({ "i", "v", "n" }, "<C-/>", "<cmd>normal gcc<CR>", opts)

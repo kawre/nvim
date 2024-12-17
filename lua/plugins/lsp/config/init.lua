@@ -1,7 +1,6 @@
 local M = {
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		"neodev.nvim",
 		"neoconf.nvim",
 		"nvim-navbuddy",
 		"blink.cmp",

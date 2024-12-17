@@ -1,9 +1,9 @@
 local M = {
 	"SmiteshP/nvim-navbuddy",
 	dependencies = "nvim-navic",
-
-	event = "VeryLazy",
-	enabled = vim.fn.has("nvim-0.10.0") == 1,
+	-- event = "VeryLazy",
+	-- enabled = vim.fn.has("nvim-0.10.0") == 1,
+	-- enabled = false,
 }
 
 M.keys = {
