@@ -17,7 +17,7 @@ M.keys = {
 	{ "<leader>fk", "<cmd>Telescope keymaps<CR>", desc = "Find Keymap" },
 	{ "<leader>fp", "<cmd>Telescope project<CR>", desc = "Find Project" },
 	{ "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Find Tags" },
-	{ "<leader>fn", "<cmd>lua Snacks.notifier.show_history()<CR>", desc = "Find Notifications" },
+	{ "<leader>fn", "<cmd>Telescope notifier<CR>", desc = "Find Notifications" },
 }
 
 M.opts = {

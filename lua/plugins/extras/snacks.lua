@@ -6,10 +6,11 @@ local M = {
 	"folke/snacks.nvim",
 	priority = 1000,
 	lazy = false,
-	-- dev = true,
+	dev = true,
 }
 
 M.opts = {
+	words = { enabled = true },
 	bigfile = { enabled = true },
 	notifier = {
 		icons = {
@@ -24,14 +25,13 @@ M.opts = {
 	quickfile = { enabled = true },
 	statuscolumn = {
 		enabled = true,
-		left = { "mark", "git" },
-		right = { "fold", "sign" },
+		left = { "sign", "git" },
+		right = { "mark", "fold" },
 		folds = {
 			open = true,
 			git_hl = false,
 		},
 	},
-	words = { enabled = true },
 	styles = {
 		notification = {
 			wo = { wrap = true }, -- Wrap notifications
@@ -54,6 +54,9 @@ M.opts = {
 				enabled = false,
 			},
 		},
+	},
+	scroll = {
+		enabled = true,
 	},
 }
 

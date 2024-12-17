@@ -7,7 +7,7 @@ local M = {
 	-- version = "v0.*",
 	opts_extend = { "sources.default" },
 	-- dev = true,
-	-- enabled = false,
+	enabled = false,
 }
 
 M.opts = {

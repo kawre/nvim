@@ -11,7 +11,7 @@ local M = {
 	},
 	version = false,
 	event = { "InsertEnter", "CmdLineEnter" },
-	enabled = false,
+	enabled = true,
 }
 
 local function truncateString(str, maxLen)
