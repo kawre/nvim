@@ -2,7 +2,6 @@ local M = {
 	"neovim/nvim-lspconfig",
 	dependencies = {
 		"neoconf.nvim",
-		"nvim-navbuddy",
 		"blink.cmp",
 	},
 	event = { "BufReadPost", "BufNewFile" },

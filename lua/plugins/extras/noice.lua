@@ -24,9 +24,9 @@ M.opts = {
 	},
 	views = {
 		cmdline_popup = {
-			border = {
-				padding = { 1, 2 },
-			},
+			-- border = {
+			-- padding = { 1, 2 },
+			-- },
 			filter_options = {},
 			win_options = {
 				winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",

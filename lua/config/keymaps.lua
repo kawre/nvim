@@ -43,4 +43,6 @@ keymap("v", "<S-Tab>", "<gv", opts)
 -- write
 keymap("n", "<leader>w", "<cmd>w<cr>", opts)
 
-keymap({ "i", "v", "n" }, "<C-/>", "<cmd>normal gcc<CR>", opts)
+keymap("n", "<leader>wl", "<cmd>Lazy<cr>", opts)
+
+keymap({ "i", "v", "n" }, "<C-/>", "<cmd>normal gcc<cr>", opts)

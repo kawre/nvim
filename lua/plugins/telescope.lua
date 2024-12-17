@@ -6,7 +6,7 @@ local M = {
 		"nvim-telescope/telescope-project.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
-	event = "VeryLazy",
+	cmd = "Telescope",
 }
 
 M.keys = {

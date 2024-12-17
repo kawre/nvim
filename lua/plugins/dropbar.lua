@@ -7,7 +7,7 @@ local M = {
 	},
 	event = "VeryLazy",
 	-- enabled = vim.fn.has("nvim-0.10") == 1,
-	-- enabled = false,
+	enabled = false,
 }
 
 M.opts = {

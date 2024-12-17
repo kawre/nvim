@@ -1,4 +1,4 @@
----@module 'neotab
+---@module 'neotab'
 
 local M = {
 	"kawre/neotab.nvim",

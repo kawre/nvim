@@ -2,7 +2,7 @@ local M = {
 	"L3MON4D3/LuaSnip",
 	build = "make install_jsregexp",
 	dependencies = { "friendly-snippets" },
-	event = "VeryLazy",
+	event = "InsertEnter",
 }
 
 M.keys = {

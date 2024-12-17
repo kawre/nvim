@@ -4,7 +4,7 @@ local M = {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons",
 	},
-	lazy = false,
+	cmd = "Neotree",
 }
 
 M.keys = {

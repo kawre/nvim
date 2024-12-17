@@ -3,8 +3,8 @@ local user = require("config.user")
 local M = {
 	"nvim-lualine/lualine.nvim",
 	dependencies = {
-		"folke/noice.nvim",
-		"nvim-tree/nvim-web-devicons",
+		"noice.nvim",
+		"nvim-web-devicons",
 		"AndreM222/copilot-lualine",
 	},
 	lazy = false,
