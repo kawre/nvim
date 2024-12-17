@@ -6,7 +6,7 @@ local M = {
 		"kevinhwang91/promise-async",
 		"snacks.nvim",
 	},
-	event = "VeryLazy",
+	event = { "BufReadPost", "BufNewFile" },
 }
 
 M.init = function()

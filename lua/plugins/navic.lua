@@ -3,6 +3,7 @@ local user = require("config.user")
 local M = {
 	"SmiteshP/nvim-navic",
 	event = "VeryLazy",
+	enabled = false,
 }
 
 M.opts = {

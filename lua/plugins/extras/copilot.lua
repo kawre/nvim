@@ -1,9 +1,8 @@
 local M = {
 	"zbirenbaum/copilot.lua",
 	cmd = "Copilot",
-	event = "VeryLazy",
-	-- lazy = false,
-	-- enabled = false,
+	event = "InsertEnter",
+	dependencies = "AndreM222/copilot-lualine",
 }
 
 M.opts = {

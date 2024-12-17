@@ -1,6 +1,6 @@
 local M = {
 	"lewis6991/gitsigns.nvim",
-	event = "VeryLazy",
+	event = "LazyFile",
 }
 
 M.opts = {

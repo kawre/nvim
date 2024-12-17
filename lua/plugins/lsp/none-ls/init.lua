@@ -1,7 +1,7 @@
 local M = {
 	"nvimtools/none-ls.nvim",
-	dependencies = "mason.nvim",
-	event = "VeryLazy",
+	-- dependencies = "mason.nvim",
+	event = "LazyFile",
 }
 
 function M.config()

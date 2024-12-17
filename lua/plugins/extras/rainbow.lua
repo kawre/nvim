@@ -1,6 +1,6 @@
 local M = {
 	"HiPhish/rainbow-delimiters.nvim",
-	event = "VeryLazy",
+	event = "LazyFile",
 	enabled = true,
 }
 

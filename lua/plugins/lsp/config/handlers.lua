@@ -70,7 +70,7 @@ local function lsp_keymaps(bufnr)
 		{ "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>" },
 		{ "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>" },
 		{ "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>" },
-		{ "n", "gR", "<cmd>lua vim.lsp.buf.rename()<cr>" },
+		{ "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>" },
 		{ "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>" },
 		{ "n", "<leader>li", "<cmd>LspInfo<cr>" },
 		{ "n", "<leader>lI", "<cmd>LspInstallInfo<cr>" },

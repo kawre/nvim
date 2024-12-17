@@ -10,7 +10,10 @@ local M = {
 }
 
 M.opts = {
-	words = { enabled = true },
+	words = {
+		enabled = true,
+		modes = { "n" },
+	},
 	bigfile = { enabled = true },
 	notifier = {
 		icons = {
@@ -61,13 +64,6 @@ M.opts = {
 }
 
 M.keys = {
-	{
-		"<leader>fn",
-		function()
-			Snacks.notifier.show_history()
-		end,
-		desc = "Notification History",
-	},
 	{
 		"<leader>rf",
 		function()

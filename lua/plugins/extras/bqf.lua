@@ -1,6 +1,6 @@
 local M = {
-    "kevinhwang91/nvim-bqf",
-    event = "VeryLazy",
+	"kevinhwang91/nvim-bqf",
+	event = { "BufReadPost", "BufNewFile" },
 }
 
 M.opts = {}

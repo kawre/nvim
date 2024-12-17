@@ -15,7 +15,7 @@ M.init = function()
 	vim.g.loaded_netrw = 1
 	vim.g.loaded_netrwPlugin = 1
 
-	vim.cmd([[hi link NeoTreeGitAdded String]])
+	-- vim.cmd([[hi link NeoTreeGitAdded String]])
 end
 
 M.opts = {

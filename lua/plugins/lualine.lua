@@ -5,9 +5,9 @@ local M = {
 	dependencies = {
 		"noice.nvim",
 		"nvim-web-devicons",
-		"AndreM222/copilot-lualine",
 	},
 	lazy = false,
+	-- event = "LazyFile",
 }
 
 -- M.opts = {
