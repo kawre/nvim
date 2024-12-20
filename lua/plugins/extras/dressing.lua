@@ -1,8 +1,6 @@
 local M = {
-	"kylechui/nvim-surround",
+	"stevearc/dressing.nvim",
 	event = "LazyFile",
 }
-
-M.opts = {}
 
 return M

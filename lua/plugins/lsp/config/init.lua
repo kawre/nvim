@@ -4,12 +4,13 @@ local M = {
 		"neoconf.nvim",
 		"blink.cmp",
 	},
-	event = { "BufReadPost", "BufNewFile" },
+	event = "LazyFile",
 	cmd = { "LspInfo", "LspInstall", "LspUninstall" },
 }
 
 M.config = function()
 	require("plugins.lsp.config.handlers").setup()
+	require("neoconf").setup()
 
 	local utils = require("config.utils")
 	local lspconfig = require("lspconfig")

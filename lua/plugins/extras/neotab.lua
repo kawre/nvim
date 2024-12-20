@@ -31,7 +31,7 @@ M.opts = {
 		},
 
 		escape = {
-			enabled = true,
+			enabled = false,
 
 			triggers = {
 				-- ["+"] = {

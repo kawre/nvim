@@ -3,12 +3,6 @@ local api = vim.api
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
--- format on save
-api.nvim_create_autocmd("BufWritePre", {
-    pattern = "*",
-    command = "lua vim.lsp.buf.format()",
-})
-
 -- local lsp_fmt_group = vim.api.nvim_create_augroup("LspFormattingGroup", {})
 -- vim.api.nvim_create_autocmd("BufWritePost", {
 --     group = lsp_fmt_group,

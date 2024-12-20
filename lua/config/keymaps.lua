@@ -25,7 +25,6 @@ keymap("n", "<leader>a", "<cmd>%y+<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", "<cmd>bnext<CR>", opts)
 keymap("n", "<S-h>", "<cmd>bprevious<CR>", opts)
-keymap("n", "<C-w>", "<cmd>b #<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", "<cmd>resize -2<CR>", opts)
@@ -41,8 +40,9 @@ keymap("v", "<Tab>", ">gv", opts)
 keymap("v", "<S-Tab>", "<gv", opts)
 
 -- write
-keymap("n", "<leader>w", "<cmd>w<cr>", opts)
+keymap("n", "<leader>w", "<cmd>lua vim.lsp.buf.format()<cr><cmd>w<cr>", opts)
 
 keymap("n", "<leader>q", "<cmd>Lazy<cr>", opts)
 
-keymap({ "i", "v", "n" }, "<C-/>", "<cmd>normal gcc<cr>", opts)
+-- comment
+keymap({ "i", "n", "v" }, "<C-/>", "<cmd>normal gcc<cr>", opts)

@@ -61,7 +61,17 @@ M.opts = {
 	scroll = {
 		enabled = true,
 	},
+	terminal = {
+		enabled = false,
+	},
 }
+
+M.config = function(_, opts)
+	Snacks.toggle.profiler():map("<leader>pp")
+	Snacks.toggle.profiler_highlights():map("<leader>ph")
+
+	require("snacks").setup(opts)
+end
 
 M.keys = {
 	{
@@ -69,8 +79,29 @@ M.keys = {
 		function()
 			Snacks.rename.rename_file()
 		end,
-		desc = "Notification History",
+		desc = "Rename file",
 	},
+	{
+		"<leader>ps",
+		function()
+			Snacks.profiler.scratch()
+		end,
+		desc = "Profiler Scratch Bufer",
+	},
+	-- {
+	-- 	"<C-t>",
+	-- 	mode = { "n", "t" },
+	-- 	function()
+	-- 		Snacks.terminal.toggle()
+	-- 	end,
+	-- },
+	-- {
+	-- 	"<Esc>",
+	-- 	mode = { "t" },
+	-- 	function()
+	-- 		Snacks.terminal.toggle()
+	-- 	end,
+	-- },
 }
 
 return M

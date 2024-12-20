@@ -7,92 +7,7 @@ local M = {
 		"nvim-web-devicons",
 	},
 	lazy = false,
-	-- event = "LazyFile",
 }
-
--- M.opts = {
---     options = {
---         icons_enabled = true,
---         theme = "auto",
---         component_separators = { left = "", right = "" },
---         section_separators = { left = "", right = "" },
---         disabled_filetypes = {
---             "lazy",
---             "NvimTree",
---             "alpha",
---             "help",
---             "neo-tree",
---             "neogitstatus",
---             "leetcode.nvim",
---         },
---         ignore_focus = {},
---         always_divide_middle = true,
---         globalstatus = false,
---         refresh = {
---             statusline = 1000,
---             tabline = 1000,
---             winbar = 1000,
---         },
---     },
---     sections = {
---         lualine_a = {
---             { "mode", right_padding = 2 },
---         },
---         lualine_b = {
---             {
---                 "branch",
---             },
---         },
---         lualine_c = {
---             {
---                 "filetype",
---             },
---             {
---                 "diagnostics",
---                 symbols = {
---                     error = user.signs.error .. " ",
---                     warn = user.signs.warn .. " ",
---                     info = user.signs.info .. " ",
---                     hint = user.signs.hint .. " ",
---                 },
---             },
---         },
---         lualine_x = {
---             -- {
---             -- 	"diagnostics",
---             -- 	symbols = {
---             -- 		error = _G.signs.error .. " ",
---             -- 		warn = _G.signs.warn .. " ",
---             -- 		info = _G.signs.info .. " ",
---             -- 		hint = _G.signs.hint .. " ",
---             -- 	},
---             -- },
---             "encoding",
---             "fileformat",
---         },
---         lualine_y = {
---             {
---                 "progress",
---             },
---         },
---         lualine_z = { "location" },
---     },
---     inactive_sections = {
---         lualine_a = {},
---         lualine_b = {},
---         lualine_c = { "filename" },
---         lualine_x = { "location" },
---         lualine_y = {},
---         lualine_z = {},
---     },
---     tabline = {},
---     winbar = {},
---     inactive_winbar = {},
---     extensions = {},
--- }
-
--- return M
---
 
 local cat = require("lualine.themes.catppuccin")
 
@@ -153,7 +68,7 @@ M.opts = {
 		lualine_b = {},
 		lualine_c = {
 			{ "branch", icon = "", color = { fg = "#cba6f8" } },
-			-- { "filename" },
+			{ "filename" },
 			{
 				"diagnostics",
 				symbols = {
@@ -214,5 +129,10 @@ M.opts = {
 	tabline = {},
 	extensions = {},
 }
+
+M.config = function(_, opts)
+	table.insert(opts.sections.lualine_x, Snacks.profiler.status())
+	require("lualine").setup(opts)
+end
 
 return M

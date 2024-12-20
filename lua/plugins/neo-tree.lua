@@ -1,9 +1,10 @@
 local M = {
 	"nvim-neo-tree/neo-tree.nvim",
 	dependencies = {
-		"nvim-lua/plenary.nvim",
-		"nvim-tree/nvim-web-devicons",
+		"plenary.nvim",
+		"nvim-web-devicons",
 	},
+	event = "VeryLazy",
 	cmd = "Neotree",
 }
 
